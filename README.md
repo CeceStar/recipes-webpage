@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# My recipes webapge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Making a recipes webpage in React and using typescript.
+Saving information below until project is finished as a reminder :)
+
+#
+
 
 ## Available Scripts
 
