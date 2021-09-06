@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/styles/App.css";
+import "../assets/styles/styles.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainPage from "./Mainpage/mainpage";
 import AllRecipes from "./All-Recipes/allrecipes";

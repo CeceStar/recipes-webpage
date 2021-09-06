@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,CAAC,CAAC;EACE,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CACV;;AACD,AAAA,IAAI,CAAC;EACH,eAAe,EAAE,MAAM;CACxB",
+    "sources": [
+        "styles.scss",
+        "base/_general.scss",
+        "base/_fonts.scss",
+        "base/_variables.scss",
+        "base/_mixins.scss",
+        "base/_animations.scss",
+        "components/_buttons.scss",
+        "components/_header.scss",
+        "components/_footer.scss",
+        "pages/mainpage.scss",
+        "pages/all-recipes.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}
