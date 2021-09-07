@@ -21,9 +21,9 @@ function Header() {
             <div className="hamburger-btn-bg"></div>
             <button className="hamburger-btn" onClick={() => setOpen(!open)}>
               {open ? (
-                <i className="fas fa-bars"></i>
-              ) : (
                 <i className="fas fa-times"></i>
+              ) : (
+                <i className="fas fa-bars"></i>
               )}
             </button>
             <div className="hamburger-nav">
