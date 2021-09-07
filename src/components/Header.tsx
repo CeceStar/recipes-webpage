@@ -1,6 +1,6 @@
-import {useState} from "react";
+import { useState } from "react";
 import Logo from "../assets/images/LogoForks.svg";
-// import WavyLine from "../assets/images/header-wave.svg";
+import WavyLine from "../assets/images/header-wave.svg";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -17,13 +17,30 @@ function Header() {
             <button className="header-btn">Recipes</button>
             <button className="header-btn">About me</button>
           </div>
-          <div className="hamburger-nav">
-            <button className="hamburger-btn" onClick={() => setOpen(!open)} >
-            {open ? <i className="fas fa-bars"></i> : <i className="fas fa-times"></i>}
-            </button>
+          <div className="hamburger-nav-container">
+            <div className="hamburger-btn" onClick={() => setOpen(!open)}>
+              {open ? (
+                <i className="fas fa-bars"></i>
+              ) : (
+                <i className="fas fa-times"></i>
+              )}
+            </div>
+            <div className="hamburger-nav hidden">
+              <ul>
+                <li>
+                  <button className="hamburger-list-btn">Home</button>
+                </li>
+                <li>
+                  <button className="hamburger-list-btn">Recipes</button>
+                </li>
+                <li>
+                  <button className="hamburger-list-btn">About me</button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        {/* <img className="wavy-line-header" src={WavyLine} alt="wavy line" /> */}
+        <img className="wavy-line-header" src={WavyLine} alt="wavy line" />
       </div>
     </>
   );

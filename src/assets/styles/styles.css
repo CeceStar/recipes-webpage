@@ -28,22 +28,11 @@ p {
 
 .background-frame {
   height: 1000px;
-  background-color: antiquewhite;
+  background-color: darkgray;
 }
 
 button {
   font-family: "Roboto Mono", mono;
-}
-
-.hamburger-btn {
-  outline: none;
-  text-decoration: none;
-  background-color: transparent;
-  border: transparent;
-  border-radius: 30px;
-  background-color: #45B864;
-  padding: 10px 20px;
-  margin: 30px;
 }
 
 /* Header buttons - nothing when not marked, green when marked/clicked */
@@ -67,10 +56,11 @@ button {
 
 .background-header {
   background-color: #FFFAE3;
-  height: 18vh;
+  height: 170px;
   position: relative;
 }
 
+/*The header wave works on mobil until 600 px the the backgroud color surpasses */
 .navbar-content-container {
   width: 100%;
 }
@@ -84,7 +74,57 @@ button {
   float: right;
 }
 
-.hamburger-nav {
+.hamburger-nav-container {
+  position: relative;
   float: right;
+}
+
+.hamburger-btn {
+  border-radius: 30px;
+  background-color: #45B864;
+  margin: 30px 20px 0px 0px;
+  width: 80px;
+  height: 45px;
+}
+
+.hamburger-btn i {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 40px;
+  right: 50px;
+}
+
+.hamburger-nav {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #45B864;
+  padding: 20px;
+  z-index: 1;
+}
+
+.hamburger-nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.hamburger-nav ul li {
+  margin: 10px;
+}
+
+.hamburger-nav ul li button {
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #FCFCFC;
+  border: none;
+}
+
+.wavy-line-header {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  left: 0;
 }
 /*# sourceMappingURL=styles.css.map */
