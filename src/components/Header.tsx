@@ -20,9 +20,9 @@ function Header() {
           <div className="hamburger-nav-container">
             <div className="hamburger-btn" onClick={() => setOpen(!open)}>
               {open ? (
-                <i className="fas fa-bars"></i>
-              ) : (
                 <i className="fas fa-times"></i>
+              ) : (
+                <i className="fas fa-bars"></i>
               )}
             </div>
             <div className="hamburger-nav hidden">
