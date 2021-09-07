@@ -1,0 +1,36 @@
+button {
+  font-family: $buttons;
+}
+
+.hamburger-btn {
+  outline: none;
+  text-decoration: none;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 30px;
+  background-color: $green;
+  padding: 10px 20px;
+  margin: 30px;
+}
+
+/* Header buttons - nothing when not marked, green when marked/clicked */
+// .header-btn {
+// }
+
+@media only screen and (min-width: 680px) {
+  .header-btn {
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    border: transparent;
+    width: 120px;
+    padding: 10px;
+    margin: 30px 30px;
+    border-radius: 30px;
+
+    &:hover {
+      transition-duration: 0.6s;
+      background-color: $green;
+    }
+  }
+}

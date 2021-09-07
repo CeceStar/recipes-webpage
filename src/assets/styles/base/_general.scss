@@ -7,6 +7,22 @@ html {
   scroll-behavior: smooth;
 }
 
-//   body {
-//     font-family: $regular-text;
-//   }
+h1 {
+  font-family: $headings;
+}
+
+h2 {
+  font-family: $headings;
+}
+
+p {
+  font-family: $regular-text;
+}
+.hidden {
+  display: none;
+}
+
+.background-frame {
+  height: 1000px;
+  background-color: antiquewhite;
+}

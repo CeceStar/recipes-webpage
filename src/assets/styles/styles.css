@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -7,5 +8,83 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+}
+
+h2 {
+  font-family: "Abril Fatface", cursive;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.background-frame {
+  height: 1000px;
+  background-color: antiquewhite;
+}
+
+button {
+  font-family: "Roboto Mono", mono;
+}
+
+.hamburger-btn {
+  outline: none;
+  text-decoration: none;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 30px;
+  background-color: #45B864;
+  padding: 10px 20px;
+  margin: 30px;
+}
+
+/* Header buttons - nothing when not marked, green when marked/clicked */
+@media only screen and (min-width: 680px) {
+  .header-btn {
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    border: transparent;
+    width: 120px;
+    padding: 10px;
+    margin: 30px 30px;
+    border-radius: 30px;
+  }
+  .header-btn:hover {
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+    background-color: #45B864;
+  }
+}
+
+.background-header {
+  background-color: #FFFAE3;
+  height: 18vh;
+  position: relative;
+}
+
+.navbar-content-container {
+  width: 100%;
+}
+
+.logo {
+  margin: 10px 30px;
+  float: left;
+}
+
+.navbar {
+  float: right;
+}
+
+.hamburger-nav {
+  float: right;
 }
 /*# sourceMappingURL=styles.css.map */
