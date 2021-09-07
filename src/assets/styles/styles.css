@@ -32,15 +32,19 @@
 
 @-webkit-keyframes fadeIn {
   0% {
+    opacity: 0;
   }
   100% {
+    opacity: 1;
   }
 }
 
 @keyframes fadeIn {
   0% {
+    opacity: 0;
   }
   100% {
+    opacity: 1;
   }
 }
 
@@ -174,15 +178,16 @@ button {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -webkit-animation: fadeIn 1s 1;
+  -webkit-animation: fadeIn 1s linear 1s 1;
   /* Safari 4+ */
   /* Fx 5+ */
   /* Opera 12+ */
-  animation: fadeIn 1s 1;
+  animation: fadeIn 1s linear 1s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   height: 200px;
-  visibility: hidden;
-  background-color: none;
   padding: 20px;
+  opacity: 0;
   z-index: 1;
 }
 
