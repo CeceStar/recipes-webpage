@@ -59,6 +59,15 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #FCFCFC;
+}
+
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 h1 {
   font-family: "Abril Fatface", cursive;
 }
@@ -110,7 +119,7 @@ button {
 
 .navbar-content-container {
   width: 100%;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .logo {
