@@ -1,19 +1,21 @@
 .background-header {
   background-color: $bright-yellow;
-  height: 170px;
+  height: 175px;
   position: relative;
 }
-/*The header wave works on mobil until 600 px the the backgroud color surpasses */
 
 .navbar-content-container {
   width: 100%;
+  padding-top: 15px;
 }
+
 .logo {
   margin: 10px 30px;
   float: left;
 }
 
 .navbar {
+  display: none;
   float: right;
 }
 
@@ -24,37 +26,9 @@
   left: 0;
   z-index: 1;
   height: 200px;
-  //   background-color: darkgreen;
-  i {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    font-size: 1.5rem;
-  }
 }
 
-.hamburger-btn-bg {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  background-color: $green;
-  width: 100%;
-  height: 100%;
-  -webkit-animation: showNavbar 1s 1; /* Safari 4+ */
-  -moz-animation: showNavbar 1s 1; /* Fx 5+ */
-  -o-animation: showNavbar 1s 1; /* Opera 12+ */
-  animation: showNavbar 1s 1;
-}
-// .hamburger-btn-bg {
-//     position: absolute;
-//     right: 0px;
-//     top: 0px;
-//     background-color: $green;
-//     width: 100%;
-//     height: 100%;
-// }
-
-.hamburger-btn {
+#hamburger-btn {
   position: absolute;
   right: 20px;
   top: 40px;
@@ -72,7 +46,22 @@
   }
 }
 
-.hamburger-nav {
+#hamburger-btn-bg {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: $green;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: showNavbar 1s 1; /* Safari 4+ */
+  -moz-animation: showNavbar 1s 1; /* Fx 5+ */
+  -o-animation: showNavbar 1s 1; /* Opera 12+ */
+  animation: showNavbar 1s 1;
+}
+
+#hamburger-nav {
+  display: none;
   position: absolute;
   top: 0px;
   left: 50%;
@@ -92,6 +81,7 @@
     li {
       margin: 10px;
       button {
+        width: 100px;
         padding: 10px;
         border-radius: 30px;
         background-color: $white;
@@ -104,6 +94,40 @@
 .wavy-line-header {
   position: absolute;
   width: 100%;
+  height: 80px;
   top: 100px;
   left: 0;
+}
+
+@media only screen and (min-width: 680px) {
+  .navbar {
+    display: block;
+  }
+
+  .hamburger-nav-container {
+    display: none;
+  }
+
+  #hamburger-btn-bg {
+    display: none;
+  }
+
+  #hamburger-btn {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: none;
+  }
+
+  .background-header {
+    background-color: $bright-yellow;
+    height: 215px;
+    position: relative;
+  }
+
+  .wavy-line-header {
+    height: 120px;
+    width: 100%;
+  }
 }

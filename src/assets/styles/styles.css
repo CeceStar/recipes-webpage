@@ -84,7 +84,6 @@ button {
   font-family: "Roboto Mono", mono;
 }
 
-/* Header buttons - nothing when not marked, green when marked/clicked */
 @media only screen and (min-width: 680px) {
   .header-btn {
     outline: none;
@@ -105,13 +104,13 @@ button {
 
 .background-header {
   background-color: #FFFAE3;
-  height: 170px;
+  height: 175px;
   position: relative;
 }
 
-/*The header wave works on mobil until 600 px the the backgroud color surpasses */
 .navbar-content-container {
   width: 100%;
+  padding-top: 15px;
 }
 
 .logo {
@@ -120,6 +119,7 @@ button {
 }
 
 .navbar {
+  display: none;
   float: right;
 }
 
@@ -132,14 +132,27 @@ button {
   height: 200px;
 }
 
-.hamburger-nav-container i {
+#hamburger-btn {
   position: absolute;
-  top: 50px;
-  right: 50px;
+  right: 20px;
+  top: 40px;
+  border-radius: 30px;
+  background-color: #45B864;
+  width: 80px;
+  height: 45px;
+  outline: none;
+  border: none;
+}
+
+#hamburger-btn i {
+  position: absolute;
+  top: 10px;
+  left: 30px;
   font-size: 1.5rem;
 }
 
-.hamburger-btn-bg {
+#hamburger-btn-bg {
+  display: none;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -153,26 +166,8 @@ button {
   animation: showNavbar 1s 1;
 }
 
-.hamburger-btn {
-  position: absolute;
-  right: 20px;
-  top: 40px;
-  border-radius: 30px;
-  background-color: #45B864;
-  width: 80px;
-  height: 45px;
-  outline: none;
-  border: none;
-}
-
-.hamburger-btn i {
-  position: absolute;
-  top: 10px;
-  left: 30px;
-  font-size: 1.5rem;
-}
-
-.hamburger-nav {
+#hamburger-nav {
+  display: none;
   position: absolute;
   top: 0px;
   left: 50%;
@@ -191,16 +186,17 @@ button {
   z-index: 1;
 }
 
-.hamburger-nav ul {
+#hamburger-nav ul {
   list-style-type: none;
   text-align: center;
 }
 
-.hamburger-nav ul li {
+#hamburger-nav ul li {
   margin: 10px;
 }
 
-.hamburger-nav ul li button {
+#hamburger-nav ul li button {
+  width: 100px;
   padding: 10px;
   border-radius: 30px;
   background-color: #FCFCFC;
@@ -210,7 +206,35 @@ button {
 .wavy-line-header {
   position: absolute;
   width: 100%;
+  height: 80px;
   top: 100px;
   left: 0;
+}
+
+@media only screen and (min-width: 680px) {
+  .navbar {
+    display: block;
+  }
+  .hamburger-nav-container {
+    display: none;
+  }
+  #hamburger-btn-bg {
+    display: none;
+  }
+  #hamburger-btn {
+    display: none;
+  }
+  #hamburger-nav {
+    display: none;
+  }
+  .background-header {
+    background-color: #FFFAE3;
+    height: 215px;
+    position: relative;
+  }
+  .wavy-line-header {
+    height: 120px;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -5,6 +5,22 @@ import WavyLine from "../assets/images/header-wave.svg";
 function Header() {
   const [open, setOpen] = useState(false);
 
+  const navbarBg = document.getElementById("hamburger-btn-bg");
+  const navbarBtns = document.getElementById("hamburger-nav");
+
+  function showNavbar(): void {
+    if (navbarBg !== null && navbarBtns !== null) {
+      navbarBg.style.display = "block";
+      navbarBtns.style.display = "block";
+    }
+  }
+  function hideNavbar(): void {
+    if (navbarBg !== null && navbarBtns !== null) {
+      navbarBg.style.display = "none";
+      navbarBtns.style.display = "none";
+    }
+  }
+
   return (
     <>
       <div className="background-header">
@@ -12,21 +28,30 @@ function Header() {
           <div className="logo">
             <img className="flex-right" src={Logo} alt="Logo" />
           </div>
-          <div className="navbar hidden">
+          <div className="navbar">
             <button className="header-btn">Home</button>
             <button className="header-btn">Recipes</button>
             <button className="header-btn">About me</button>
           </div>
           <div className="hamburger-nav-container">
-            <div className="hamburger-btn-bg"></div>
-            <button className="hamburger-btn" onClick={() => setOpen(!open)}>
+            <div id="hamburger-btn-bg"></div>
+            <button
+              id="hamburger-btn"
+              onClick={() => {
+                setOpen(!open);
+                if (open === false) {
+                  showNavbar();
+                } else {
+                  hideNavbar();
+                }
+              }}>
               {open ? (
                 <i className="fas fa-times"></i>
               ) : (
                 <i className="fas fa-bars"></i>
               )}
             </button>
-            <div className="hamburger-nav">
+            <div id="hamburger-nav">
               <ul>
                 <li>
                   <button className="hamburger-list-btn">Home</button>
