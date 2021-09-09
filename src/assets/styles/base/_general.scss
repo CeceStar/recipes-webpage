@@ -24,14 +24,23 @@ h2 {
   font-family: $headings;
 }
 
+h3 {
+  font-family: $headings;
+}
+
 p {
   font-family: $regular-text;
 }
+
+li {
+  font-family: $regular-text;
+}
+
 .hidden {
   display: none;
 }
 
 .background-frame {
-  height: 1000px;
+  height: 200px;
   background-color: $white;
 }

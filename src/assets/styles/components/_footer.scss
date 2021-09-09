@@ -1,0 +1,58 @@
+.wavy-line-footer {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: -50px;
+}
+
+.footer-bg {
+  position: relative;
+  background-color: $green;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto 60px;
+  h3 {
+    padding-bottom: 10px;
+    font-weight: normal;
+  }
+}
+
+.footer-logo {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+}
+.footer-links {
+  ul {
+    li {
+      list-style-type: none;
+      padding-bottom: 2px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.footer-contact-me {
+  p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+  a {
+    text-decoration: none;
+    &:link {
+      color: $bright-yellow;
+    }
+    &:visited {
+      color: $bright-yellow;
+    }
+    &:hover {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.footer-created-with {
+  font-size: 0.8rem;
+  grid-column: 1/4;
+  margin: 15px 20px 20px 20px;
+}
