@@ -76,7 +76,15 @@ h2 {
   font-family: "Abril Fatface", cursive;
 }
 
+h3 {
+  font-family: "Abril Fatface", cursive;
+}
+
 p {
+  font-family: "Montserrat", sans-serif;
+}
+
+li {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -85,7 +93,7 @@ p {
 }
 
 .background-frame {
-  height: 1000px;
+  height: 200px;
   background-color: #FCFCFC;
 }
 
@@ -245,5 +253,69 @@ button {
     height: 120px;
     width: 100%;
   }
+}
+
+.wavy-line-footer {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: -50px;
+}
+
+.footer-bg {
+  position: relative;
+  background-color: #45B864;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 2fr;
+      grid-template-columns: 1fr 1fr 2fr;
+  -ms-grid-rows: auto 60px;
+      grid-template-rows: auto 60px;
+}
+
+.footer-bg h3 {
+  padding-bottom: 10px;
+  font-weight: normal;
+}
+
+.footer-logo {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+}
+
+.footer-links ul li {
+  list-style-type: none;
+  padding-bottom: 2px;
+  font-size: 0.8rem;
+}
+
+.footer-contact-me p {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.footer-contact-me a {
+  text-decoration: none;
+}
+
+.footer-contact-me a:link {
+  color: #FFFAE3;
+}
+
+.footer-contact-me a:visited {
+  color: #FFFAE3;
+}
+
+.footer-contact-me a:hover {
+  font-size: 1.5rem;
+}
+
+.footer-created-with {
+  font-size: 0.8rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  margin: 15px 20px 20px 20px;
 }
 /*# sourceMappingURL=styles.css.map */

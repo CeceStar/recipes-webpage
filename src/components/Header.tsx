@@ -39,7 +39,7 @@ function Header() {
               id="hamburger-btn"
               onClick={() => {
                 setOpen(!open);
-                if (open === false) {
+                if (open === true) {
                   showNavbar();
                 } else {
                   hideNavbar();
