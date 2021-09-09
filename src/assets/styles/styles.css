@@ -308,7 +308,7 @@ button {
 }
 
 .footer-contact-me a:hover {
-  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .footer-created-with {
@@ -317,5 +317,30 @@ button {
   -ms-grid-column-span: 3;
   grid-column: 1/4;
   margin: 15px 20px 20px 20px;
+}
+
+@media only screen and (min-width: 680px) {
+  .footer-bg {
+    position: relative;
+    background-color: #45B864;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 2fr 3fr;
+        grid-template-columns: 1fr 1fr 2fr 3fr;
+    -ms-grid-rows: auto 40px;
+        grid-template-rows: auto 40px;
+  }
+  .footer-created-with {
+    font-size: 0.8rem;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4/5;
+    margin-top: 35px;
+  }
+  .footer-logo {
+    height: 60px;
+    width: 60px;
+    margin-left: 20px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
