@@ -1,9 +1,13 @@
-import HeroImage from "../../assets/images/rachel-park-hrlvr2ZlUNk-unsplash.jpg";
+import HeroImage from "../../assets/images/rachel-park-hrlvr2ZlUNk-unsplash-Small.jpg";
 
 function HeroImageBlobb() {
   return (
     <>
-      <img className="big-picture" src={HeroImage} />
+      <img
+        className="big-picture"
+        src={HeroImage}
+        alt="Nice food on a table inside a blobby shape."
+      />
       <svg width="0" height="0">
         <defs>
           <clipPath id="svgPath">

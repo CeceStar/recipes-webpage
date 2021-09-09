@@ -1,5 +1,6 @@
 .landing-hero-container {
   position: relative;
+  background-color: $bright-yellow;
 }
 
 .hide-the-wave {
@@ -12,9 +13,39 @@
 }
 
 .big-picture {
-  position: absolute;
-  top: -70px;
-  width: 100%;
+  width: 270px;
+  height: auto;
   -webkit-clip-path: url(#svgPath);
   clip-path: url(#svgPath);
+}
+
+.hero-images-container {
+  position: relative;
+}
+
+.hero-images {
+  position: absolute;
+  top: -50px;
+  left: 60%;
+  transform: translateX(-50%);
+}
+
+.hero-like {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.super-title-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  text-align: right;
+  width: 100%;
+  height: 200px;
+}
+
+.super-title {
+  grid-column: 2;
+  font-size: 4rem;
+  padding-top: 200px;
 }
