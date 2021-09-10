@@ -2,3 +2,22 @@
   height: 900px;
   background-color: $white;
 }
+
+.filters-container {
+  max-width: 300px;
+  margin: 10px;
+}
+
+.box-of-filters {
+  background-color: $bright-yellow;
+  width: 100%;
+  padding: 10px;
+  h4 {
+    padding-bottom: 5px;
+  }
+  ul {
+    li {
+      list-style-type: none;
+    }
+  }
+}
