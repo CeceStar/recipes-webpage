@@ -2,6 +2,15 @@ button {
   font-family: $buttons;
 }
 
+.btn {
+  outline: none;
+  text-decoration: none;
+  border: transparent;
+  background-color: $green;
+  padding: 10px;
+  border-radius: 30px;
+}
+
 @media only screen and (min-width: 680px) {
   .header-btn {
     outline: none;

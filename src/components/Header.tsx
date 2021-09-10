@@ -46,9 +46,9 @@ function Header() {
                 }
               }}>
               {open ? (
-                <i className="fas fa-times"></i>
-              ) : (
                 <i className="fas fa-bars"></i>
+              ) : (
+                <i className="fas fa-times"></i>
               )}
             </button>
             <div id="hamburger-nav">

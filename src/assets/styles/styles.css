@@ -93,12 +93,21 @@ li {
 }
 
 .background-frame {
-  height: 200px;
+  height: 900px;
   background-color: #FCFCFC;
 }
 
 button {
   font-family: "Roboto Mono", mono;
+}
+
+.btn {
+  outline: none;
+  text-decoration: none;
+  border: transparent;
+  background-color: #45B864;
+  padding: 10px;
+  border-radius: 30px;
 }
 
 @media only screen and (min-width: 680px) {
@@ -342,5 +351,60 @@ button {
     width: 60px;
     margin-left: 20px;
   }
+}
+
+.landing-hero-container {
+  position: relative;
+  height: 100%;
+  background-color: #FFFAE3;
+}
+
+.hide-the-wave {
+  position: absolute;
+  top: -75px;
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  background-color: #FFFAE3;
+}
+
+.hero-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.big-picture {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  background-image: url("/src/assets/images/hero-image-breakfast.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-like {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+}
+
+.super-title {
+  font-size: 5rem;
+  text-align: right;
+}
+
+.btn-hero {
+  float: right;
+  width: 100px;
+  margin: 20px;
+}
+
+.background-frame-all-recipes {
+  height: 900px;
+  background-color: #FCFCFC;
 }
 /*# sourceMappingURL=styles.css.map */
