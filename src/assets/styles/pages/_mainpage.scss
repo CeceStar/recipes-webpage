@@ -13,16 +13,12 @@
   background-color: $bright-yellow;
 }
 
-.big-picture {
-  width: 270px;
-  height: auto;
-  -webkit-clip-path: url(#svgPath);
-  clip-path: url(#svgPath);
-}
-
-.hero-images-container {
-  position: relative;
-}
+// .big-picture {
+//   width: 270px;
+//   height: auto;
+//   -webkit-clip-path: url(#svgPath);
+//   clip-path: url(#svgPath);
+// }
 
 .hero-images {
   display: flex;
@@ -31,17 +27,21 @@
 
 .big-picture {
   position: relative;
+  height: 200px;
+  width: 300px;
+  background-image: url("/src/assets/images/hero-image-breakfast.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-like {
   position: absolute;
-  top: 100px;
-  left: 40px;
+  bottom: 0;
+  left: 30px;
 }
 
 .super-title {
-  padding-top: 20px;
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: right;
 }
 

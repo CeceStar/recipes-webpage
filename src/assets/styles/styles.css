@@ -93,7 +93,7 @@ li {
 }
 
 .background-frame {
-  height: 1000px;
+  height: 900px;
   background-color: #FCFCFC;
 }
 
@@ -368,17 +368,6 @@ button {
   background-color: #FFFAE3;
 }
 
-.big-picture {
-  width: 270px;
-  height: auto;
-  -webkit-clip-path: url(#svgPath);
-  clip-path: url(#svgPath);
-}
-
-.hero-images-container {
-  position: relative;
-}
-
 .hero-images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -390,17 +379,21 @@ button {
 
 .big-picture {
   position: relative;
+  height: 200px;
+  width: 300px;
+  background-image: url("/src/assets/images/hero-image-breakfast.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-like {
   position: absolute;
-  top: 100px;
-  left: 40px;
+  bottom: 0;
+  left: 30px;
 }
 
 .super-title {
-  padding-top: 20px;
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: right;
 }
 
@@ -408,5 +401,10 @@ button {
   float: right;
   width: 100px;
   margin: 20px;
+}
+
+.background-frame-all-recipes {
+  height: 900px;
+  background-color: #FCFCFC;
 }
 /*# sourceMappingURL=styles.css.map */
