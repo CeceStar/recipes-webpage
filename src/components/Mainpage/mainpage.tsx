@@ -4,9 +4,8 @@ function MainPage() {
   return (
     <>
       <div className="background-frame">
-          <Hero />
-        </div>
-      
+        <Hero />
+      </div>
     </>
   );
 }
