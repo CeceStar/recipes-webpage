@@ -33,7 +33,7 @@ function App() {
           }
     `;
 
-  let [recipeData, setRecipeData] = useState<oneRecipe[]>();
+  let [recipeData, setRecipeData] = useState<oneRecipe[] | null>(null);
 
   useEffect(() => {
     window
@@ -65,7 +65,7 @@ function App() {
           <MainPage />
         </Route>
         <Route path="/recipes">
-          <AllRecipesPage allRecipes={recipeData} />
+          <AllRecipesPage fetchedRecipeData={recipeData} />
         </Route>
       </Switch>
       <Footer />

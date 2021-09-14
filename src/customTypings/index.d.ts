@@ -20,9 +20,6 @@ declare module "myTypes" {
     tags: string[];
   }
 
-  interface ChildComponentProps {
-    allRecipes?: oneRecipe[];
-  }
 }
 
 module.exports = {

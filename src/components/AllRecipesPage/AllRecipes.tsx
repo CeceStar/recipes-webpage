@@ -1,12 +1,17 @@
 import React from "react";
 import Filters from "./Filters";
-import { ChildComponentProps } from "myTypes";
+import { oneRecipe } from "myTypes";
 
-const AllRecipes: React.FC<ChildComponentProps> = ({ allRecipes }) => {
-  console.log(allRecipes[0].tags);
-  const allRatingWithHigherThanThree = allRecipes?.filter((element, index) => {
-    return element.rating > 3;
-  });
+const AllRecipes = (props: { fetchedRecipeData: oneRecipe[] | null }) => {
+  if (props.fetchedRecipeData !== null) {
+    console.log(props.fetchedRecipeData[0].tags);
+    const recipesWithHigherRatingThanThree = props.fetchedRecipeData.filter(
+      (element, index) => {
+        return element.rating > 3;
+      }
+    );
+    console.log(recipesWithHigherRatingThanThree);
+  }
 
   return (
     <>
