@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import MainPage from "./MainPage/MainPage";
 import AllRecipesPage from "./AllRecipesPage/AllRecipes";
+import { oneRecipe } from "myTypes";
 
 function App() {
   const query = `
@@ -32,7 +33,7 @@ function App() {
           }
     `;
 
-  let [recipeData, setRecipeData] = useState("Notingh here yet");
+  let [recipeData, setRecipeData] = useState<oneRecipe[]>();
 
   useEffect(() => {
     window
@@ -55,7 +56,6 @@ function App() {
         setRecipeData(data.recipeCollection.items);
       });
   }, [query, setRecipeData]);
-  console.log(recipeData);
 
   return (
     <Router>
@@ -65,7 +65,7 @@ function App() {
           <MainPage />
         </Route>
         <Route path="/recipes">
-          <AllRecipesPage />
+          <AllRecipesPage allRecipes={recipeData} />
         </Route>
       </Switch>
       <Footer />

@@ -1,7 +1,13 @@
 import React from "react";
 import Filters from "./Filters";
+import { ChildComponentProps } from "myTypes";
 
-function AllRecipes() {
+const AllRecipes: React.FC<ChildComponentProps> = ({ allRecipes }) => {
+  console.log(allRecipes[0].tags);
+  const allRatingWithHigherThanThree = allRecipes?.filter((element, index) => {
+    return element.rating > 3;
+  });
+
   return (
     <>
       <div className="background-frame-all-recipes">
@@ -13,6 +19,6 @@ function AllRecipes() {
       </div>
     </>
   );
-}
+};
 
 export default AllRecipes;
