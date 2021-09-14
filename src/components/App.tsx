@@ -3,8 +3,8 @@ import "../assets/styles/styles.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import MainPage from "./Mainpage/mainpage";
-import AllRecipes from "./All-Recipes/allrecipes";
+import MainPage from "./MainPage/MainPage";
+import AllRecipes from "./AllRecipesPage/AllRecipes";
 
 function App() {
   return (

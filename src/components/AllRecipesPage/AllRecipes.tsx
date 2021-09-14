@@ -1,5 +1,5 @@
 import React from "react";
-import Filters from "./filters";
+import Filters from "./Filters";
 
 function AllRecipes() {
   return (
