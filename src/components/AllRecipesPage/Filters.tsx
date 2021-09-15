@@ -22,7 +22,7 @@ function Filters(props: RecipeFilters) {
             i++;
             let idstring = i.toString();
             return (
-              <li>
+              <li key={`${props.idWord}${idstring}`}>
                 <button
                   id={`${props.idWord}${idstring}`}
                   className="filter-btn"
