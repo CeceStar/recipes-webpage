@@ -11,15 +11,15 @@ import {
 } from "./FilterOptionsArray";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
-  if (props.fetchedRecipeData !== null) {
-    console.log(props.fetchedRecipeData[0].meal);
-    const recipesWithHigherRatingThanThree = props.fetchedRecipeData.filter(
-      (element, index) => {
-        return element.rating > 3;
-      }
-    );
-    console.log(recipesWithHigherRatingThanThree);
-  }
+  // if (props.fetchedRecipeData !== null) {
+  //   console.log(props.fetchedRecipeData[0].meal);
+  //   const recipesWithHigherRatingThanThree = props.fetchedRecipeData.filter(
+  //     (element, index) => {
+  //       return element.rating > 3;
+  //     }
+  //   );
+  //   console.log(recipesWithHigherRatingThanThree);
+  // }
 
   return (
     <>
