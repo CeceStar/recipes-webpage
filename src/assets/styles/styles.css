@@ -80,6 +80,13 @@ h2 {
 
 h3 {
   font-family: "Abril Fatface", cursive;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 p {
@@ -117,7 +124,7 @@ button {
   text-decoration: none;
   border: transparent;
   background-color: #45B864;
-  width: 120px;
+  width: 150px;
   border-radius: 30px;
   text-align: left;
   padding-left: 25px;
@@ -424,8 +431,9 @@ button {
 }
 
 .background-frame-all-recipes {
-  height: 900px;
+  height: auto;
   background-color: #FCFCFC;
+  margin-bottom: 100px;
 }
 
 .filters-container {

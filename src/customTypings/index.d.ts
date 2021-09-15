@@ -1,12 +1,12 @@
 declare module "myTypes" {
-  type imageFromContentfull = {
+  type ImageFromContentfull = {
     title: string;
     url: string;
     width: number;
     height: number;
   };
 
-  interface oneRecipe {
+  interface OneRecipe {
     title: string;
     slug: string;
     introText?: string;
@@ -21,9 +21,16 @@ declare module "myTypes" {
     numberOfIngredientsTag: string;
     rating: number;
   }
+
+  interface RecipeFilters {
+    idWord: string;
+    title: string;
+    options: string[] | number[];
+  }
 }
 
 module.exports = {
-  imageFromContentfull,
-  oneRecipe,
+  ImageFromContentfull,
+  OneRecipe,
+  RecipeFilters,
 };

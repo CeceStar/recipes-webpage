@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import MainPage from "./MainPage/Mainpage";
 import AllRecipesPage from "./AllRecipesPage/AllRecipes";
-import { oneRecipe } from "myTypes";
+import { OneRecipe } from "myTypes";
 
 function App() {
   const query = `
@@ -35,7 +35,7 @@ function App() {
   }
     `;
 
-  let [recipeData, setRecipeData] = useState<oneRecipe[] | null>(null);
+  let [recipeData, setRecipeData] = useState<OneRecipe[] | null>(null);
 
   useEffect(() => {
     window
