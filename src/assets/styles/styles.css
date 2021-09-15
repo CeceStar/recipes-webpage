@@ -478,6 +478,97 @@ button {
   margin: 20px;
 }
 
+.wavy-line-hero {
+  display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  .landing-hero-container {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 10px 2fr 2fr 10px;
+        grid-template-columns: 10px 2fr 2fr 10px;
+    -ms-grid-rows: 300px 70px 100px;
+        grid-template-rows: 300px 70px 100px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #FFFAE3;
+    width: 100%;
+    height: 460px;
+    padding-top: 20px;
+  }
+  .hero-images {
+    display: block;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+  }
+  .big-picture {
+    height: 300px;
+    width: 360px;
+    background-image: url("/src/assets/images/hero-image-breakfast-computer1.png");
+  }
+  .super-title {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    font-size: 4rem;
+    font-weight: 400;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    padding-bottom: 20px;
+  }
+  .btn-hero {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin: 0;
+  }
+  .wavy-line-hero {
+    display: block;
+    width: 100%;
+    height: 80px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .landing-hero-container {
+    -ms-grid-columns: 10px 1fr 1fr 10px;
+        grid-template-columns: 10px 1fr 1fr 10px;
+    -ms-grid-rows: 500px 100px 100px;
+        grid-template-rows: 500px 100px 100px;
+    height: 690px;
+  }
+  .big-picture {
+    height: 540px;
+    width: 670px;
+    background-image: url("/src/assets/images/hero-image-breakfast-computer5.png");
+  }
+  .super-title {
+    font-size: 6rem;
+    font-weight: 400;
+  }
+  .hero-like {
+    height: 100px;
+    bottom: 50px;
+    left: 50px;
+  }
+}
+
 .background-frame-all-recipes {
   height: auto;
   background-color: #FCFCFC;

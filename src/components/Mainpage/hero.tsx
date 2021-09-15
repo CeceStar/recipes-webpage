@@ -1,31 +1,35 @@
 // import HeroImageBlobb from "./blobb-hero-image";
 import LikeStamp from "../../assets/images/Like-stamp.png";
+import WavyLine from "../../assets/images/hero-wave.svg";
 import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="landing-hero-container">
-      <div className="hero-images">
-        <div className="big-picture">
-          <img
-            className="hero-like"
-            src={LikeStamp}
-            alt="Drawn hand doing thumps up on a blue background"
-          />
+    <>
+      <div className="landing-hero-container">
+        <div className="hero-images">
+          <div className="big-picture">
+            <img
+              className="hero-like"
+              src={LikeStamp}
+              alt="Drawn hand doing thumps up on a blue background"
+            />
+          </div>
+          {/* <HeroImageBlobb /> */}
         </div>
-        {/* <HeroImageBlobb /> */}
+        <h1 className="super-title">
+          Lets eat
+          <br />
+          and be
+          <br />
+          happy
+        </h1>
+        <Link to="/recipes" className="btn-hero">
+          <button className="btn">View all</button>
+        </Link>
+        <img className="wavy-line-hero" src={WavyLine} alt="wavy line" />
       </div>
-      <h1 className="super-title">
-        Lets eat
-        <br />
-        and be
-        <br />
-        happy
-      </h1>
-      <Link to="/recipes">
-        <button className="btn btn-hero">View all</button>
-      </Link>
-    </div>
+    </>
   );
 }
 
