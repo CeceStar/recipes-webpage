@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/images/LogoForks.svg";
 import WavyLine from "../assets/images/header-wave.svg";
 
@@ -13,8 +14,20 @@ function Header() {
             <img className="flex-right" src={Logo} alt="Logo" />
           </div>
           <div className="navbar">
-            <button className="header-btn">Home</button>
-            <button className="header-btn">Recipes</button>
+            <Link
+              to="/"
+              onClick={() => {
+                setOpen(false);
+              }}>
+              <button className="header-btn">Home</button>
+            </Link>
+            <Link
+              to="/recipes"
+              onClick={() => {
+                setOpen(false);
+              }}>
+              <button className="header-btn">Recipes</button>
+            </Link>
             <button className="header-btn">About me</button>
           </div>
           <div className="hamburger-nav-container">
@@ -38,13 +51,31 @@ function Header() {
               style={open ? { display: "block" } : { display: "none" }}>
               <ul>
                 <li>
-                  <button className="hamburger-list-btn">Home</button>
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
+                    <button className="hamburger-list-btn">Home</button>
+                  </Link>
                 </li>
                 <li>
-                  <button className="hamburger-list-btn">Recipes</button>
+                  <Link
+                    to="/recipes"
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
+                    <button className="hamburger-list-btn">Recipes</button>
+                  </Link>
                 </li>
                 <li>
-                  <button className="hamburger-list-btn">About me</button>
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
+                    <button className="hamburger-list-btn">About me</button>
+                  </Link>
                 </li>
               </ul>
             </div>
