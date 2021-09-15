@@ -4,6 +4,12 @@
   position: relative;
 }
 
+.background-header-homepage {
+  background-color: $bright-yellow;
+  height: 120px;
+  position: relative;
+}
+
 .navbar-content-container {
   width: 100%;
   padding-top: 10px;
@@ -136,6 +142,11 @@
   .background-header {
     background-color: $bright-yellow;
     height: 215px;
+    position: relative;
+  }
+  .background-header-homepage {
+    background-color: $bright-yellow;
+    height: 120px;
     position: relative;
   }
 

@@ -192,6 +192,12 @@ button {
   position: relative;
 }
 
+.background-header-homepage {
+  background-color: #FFFAE3;
+  height: 120px;
+  position: relative;
+}
+
 .navbar-content-container {
   width: 100%;
   padding-top: 10px;
@@ -328,6 +334,11 @@ button {
   .background-header {
     background-color: #FFFAE3;
     height: 215px;
+    position: relative;
+  }
+  .background-header-homepage {
+    background-color: #FFFAE3;
+    height: 120px;
     position: relative;
   }
   .wavy-line-header {

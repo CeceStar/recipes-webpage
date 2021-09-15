@@ -20,7 +20,10 @@ function Header() {
 
   return (
     <>
-      <div className="background-header">
+      <div
+        className={
+          isOnHomepage ? "background-header-homepage" : "background-header"
+        }>
         <div className="navbar-content-container">
           <div className="logo">
             <img className="flex-right" src={Logo} alt="Logo" />
