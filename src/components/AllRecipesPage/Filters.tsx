@@ -4,8 +4,8 @@ import { RecipeFilters } from "myTypes";
 function Filters(props: RecipeFilters) {
   let i = 0;
   function handleCLickEvent(e: MouseEvent<HTMLButtonElement>): void {
-    // console.log(e.currentTarget.id);
-    // console.log(e.currentTarget.innerHTML);
+    console.log(e.currentTarget.id);
+    console.log(e.currentTarget.innerHTML);
     if (e.currentTarget.className === "filter-btn") {
       e.currentTarget.className = "clicked-filter-btn";
     } else {
