@@ -4,7 +4,7 @@ import { oneRecipe } from "myTypes";
 
 const AllRecipes = (props: { fetchedRecipeData: oneRecipe[] | null }) => {
   if (props.fetchedRecipeData !== null) {
-    console.log(props.fetchedRecipeData[0].tags);
+    console.log(props.fetchedRecipeData[0].meal);
     const recipesWithHigherRatingThanThree = props.fetchedRecipeData.filter(
       (element, index) => {
         return element.rating > 3;

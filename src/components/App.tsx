@@ -3,34 +3,36 @@ import "../assets/styles/styles.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import MainPage from "./MainPage/MainPage";
+import MainPage from "./MainPage/Mainpage";
 import AllRecipesPage from "./AllRecipesPage/AllRecipes";
 import { oneRecipe } from "myTypes";
 
 function App() {
   const query = `
-        {
-            recipeCollection{
-              items{
-                title,
-                slug,
-                introText,
-                image {
-                  title,
-                  url,
-                  width,
-                    height
-                }
-                rating,
-                cookingTime,
-                totalNumberOfIngredients,
-                listOfIngredients,
-                directions,
-                urlToRecipe,
-                tags
-              }
-            }
-          }
+  {
+    recipeCollection{
+      items{
+        title,
+        slug,
+        introText,
+        image {
+          title,
+          url,
+          width,
+          height
+        }
+        listOfIngredients,
+        directions,
+        urlToRecipe,
+        meal,
+        cookingTime,
+        difficultyLevel,
+        totalNumberOfIngredients,
+        numberOfIngredientsTag,  
+        rating, 
+      }
+    }
+  }
     `;
 
   let [recipeData, setRecipeData] = useState<oneRecipe[] | null>(null);
