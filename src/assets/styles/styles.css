@@ -192,6 +192,12 @@ button {
   position: relative;
 }
 
+.background-header-homepage {
+  background-color: #FFFAE3;
+  height: 120px;
+  position: relative;
+}
+
 .navbar-content-container {
   width: 100%;
   padding-top: 10px;
@@ -242,11 +248,11 @@ button {
   background-color: #45B864;
   width: 100%;
   height: 100%;
-  -webkit-animation: showNavbar 1s 1;
+  -webkit-animation: showNavbar 0.5s 1;
   /* Safari 4+ */
   /* Fx 5+ */
   /* Opera 12+ */
-  animation: showNavbar 1s 1;
+  animation: showNavbar 0.5s 1;
 }
 
 .hamburger-btn-bg-close {
@@ -257,11 +263,11 @@ button {
   border-radius: 30px;
   width: 80px;
   height: 45px;
-  -webkit-animation: hideNavbar 1s 1;
+  -webkit-animation: hideNavbar 0.5s 1;
   /* Safari 4+ */
   /* Fx 5+ */
   /* Opera 12+ */
-  animation: hideNavbar 1s 1;
+  animation: hideNavbar 0.5s 1;
 }
 
 #hamburger-nav {
@@ -271,11 +277,11 @@ button {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -webkit-animation: fadeIn 1s linear 1s 1;
+  -webkit-animation: fadeIn 0.2s linear 0.5s 1;
   /* Safari 4+ */
   /* Fx 5+ */
   /* Opera 12+ */
-  animation: fadeIn 1s linear 1s 1;
+  animation: fadeIn 0.2s linear 0.5s 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   height: 200px;
@@ -328,6 +334,11 @@ button {
   .background-header {
     background-color: #FFFAE3;
     height: 215px;
+    position: relative;
+  }
+  .background-header-homepage {
+    background-color: #FFFAE3;
+    height: 120px;
     position: relative;
   }
   .wavy-line-header {
@@ -428,15 +439,6 @@ button {
 .landing-hero-container {
   position: relative;
   height: 100%;
-  background-color: #FFFAE3;
-}
-
-.hide-the-wave {
-  position: absolute;
-  top: -75px;
-  left: 0px;
-  width: 100%;
-  height: 80px;
   background-color: #FFFAE3;
 }
 

@@ -4,6 +4,12 @@
   position: relative;
 }
 
+.background-header-homepage {
+  background-color: $bright-yellow;
+  height: 120px;
+  position: relative;
+}
+
 .navbar-content-container {
   width: 100%;
   padding-top: 10px;
@@ -53,10 +59,10 @@
   background-color: $green;
   width: 100%;
   height: 100%;
-  -webkit-animation: showNavbar 1s 1; /* Safari 4+ */
-  -moz-animation: showNavbar 1s 1; /* Fx 5+ */
-  -o-animation: showNavbar 1s 1; /* Opera 12+ */
-  animation: showNavbar 1s 1;
+  -webkit-animation: showNavbar 0.5s 1; /* Safari 4+ */
+  -moz-animation: showNavbar 0.5s 1; /* Fx 5+ */
+  -o-animation: showNavbar 0.5s 1; /* Opera 12+ */
+  animation: showNavbar 0.5s 1;
 }
 
 .hamburger-btn-bg-close {
@@ -67,10 +73,10 @@
   border-radius: 30px;
   width: 80px;
   height: 45px;
-  -webkit-animation: hideNavbar 1s 1; /* Safari 4+ */
-  -moz-animation: hideNavbar 1s 1; /* Fx 5+ */
-  -o-animation: hideNavbar 1s 1; /* Opera 12+ */
-  animation: hideNavbar 1s 1;
+  -webkit-animation: hideNavbar 0.5s 1; /* Safari 4+ */
+  -moz-animation: hideNavbar 0.5s 1; /* Fx 5+ */
+  -o-animation: hideNavbar 0.5s 1; /* Opera 12+ */
+  animation: hideNavbar 0.5s 1;
 }
 
 #hamburger-nav {
@@ -79,10 +85,10 @@
   top: 0px;
   left: 50%;
   transform: translate(-50%, 0);
-  -webkit-animation: fadeIn 1s linear 1s 1; /* Safari 4+ */
-  -moz-animation: fadeIn 1s linear 1s 1; /* Fx 5+ */
-  -o-animation: fadeIn 1s linear 1s 1; /* Opera 12+ */
-  animation: fadeIn 1s linear 1s 1;
+  -webkit-animation: fadeIn 0.2s linear 0.5s 1; /* Safari 4+ */
+  -moz-animation: fadeIn 0.2s linear 0.5s 1; /* Fx 5+ */
+  -o-animation: fadeIn 0.2s linear 0.5s 1; /* Opera 12+ */
+  animation: fadeIn 0.2s linear 0.5s 1;
   animation-fill-mode: forwards;
   height: 200px;
   padding: 20px;
@@ -136,6 +142,11 @@
   .background-header {
     background-color: $bright-yellow;
     height: 215px;
+    position: relative;
+  }
+  .background-header-homepage {
+    background-color: $bright-yellow;
+    height: 120px;
     position: relative;
   }
 

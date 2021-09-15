@@ -1,14 +1,29 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images/LogoForks.svg";
 import WavyLine from "../assets/images/header-wave.svg";
 
 function Header() {
   const [open, setOpen] = useState(false);
 
+  const [isOnHomepage, setIsOnHomepage] = useState(true);
+
+  let location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setIsOnHomepage(true);
+    } else {
+      setIsOnHomepage(false);
+    }
+  }, [location.pathname]);
+
   return (
     <>
-      <div className="background-header">
+      <div
+        className={
+          isOnHomepage ? "background-header-homepage" : "background-header"
+        }>
         <div className="navbar-content-container">
           <div className="logo">
             <img className="flex-right" src={Logo} alt="Logo" />
@@ -81,7 +96,12 @@ function Header() {
             </div>
           </div>
         </div>
-        <img className="wavy-line-header" src={WavyLine} alt="wavy line" />
+        <img
+          className="wavy-line-header"
+          src={WavyLine}
+          alt="wavy line"
+          style={isOnHomepage ? { display: "none" } : { display: "block" }}
+        />
       </div>
     </>
   );
