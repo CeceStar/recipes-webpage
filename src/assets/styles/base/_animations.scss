@@ -14,6 +14,22 @@
   }
 }
 
+@keyframes hideNavbar {
+  0% {
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    right: 20px;
+    top: 40px;
+    border-radius: 30px;
+    width: 80px;
+    height: 45px;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

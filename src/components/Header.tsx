@@ -1,25 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/images/LogoForks.svg";
 import WavyLine from "../assets/images/header-wave.svg";
 
 function Header() {
   const [open, setOpen] = useState(false);
-
-  const navbarBg = document.getElementById("hamburger-btn-bg");
-  const navbarBtns = document.getElementById("hamburger-nav");
-
-  function showNavbar(): void {
-    if (navbarBg !== null && navbarBtns !== null) {
-      navbarBg.style.display = "block";
-      navbarBtns.style.display = "block";
-    }
-  }
-  function hideNavbar(): void {
-    if (navbarBg !== null && navbarBtns !== null) {
-      navbarBg.style.display = "none";
-      navbarBtns.style.display = "none";
-    }
-  }
 
   return (
     <>
@@ -29,38 +14,68 @@ function Header() {
             <img className="flex-right" src={Logo} alt="Logo" />
           </div>
           <div className="navbar">
-            <button className="header-btn">Home</button>
-            <button className="header-btn">Recipes</button>
+            <Link
+              to="/"
+              onClick={() => {
+                setOpen(false);
+              }}>
+              <button className="header-btn">Home</button>
+            </Link>
+            <Link
+              to="/recipes"
+              onClick={() => {
+                setOpen(false);
+              }}>
+              <button className="header-btn">Recipes</button>
+            </Link>
             <button className="header-btn">About me</button>
           </div>
           <div className="hamburger-nav-container">
-            <div id="hamburger-btn-bg"></div>
+            <div
+              className={
+                open ? "hamburger-btn-bg" : "hamburger-btn-bg-close"
+              }></div>
             <button
               id="hamburger-btn"
               onClick={() => {
                 setOpen(!open);
-                if (open === true) {
-                  showNavbar();
-                } else {
-                  hideNavbar();
-                }
               }}>
               {open ? (
-                <i className="fas fa-bars"></i>
-              ) : (
                 <i className="fas fa-times"></i>
+              ) : (
+                <i className="fas fa-bars"></i>
               )}
             </button>
-            <div id="hamburger-nav">
+            <div
+              id="hamburger-nav"
+              style={open ? { display: "block" } : { display: "none" }}>
               <ul>
                 <li>
-                  <button className="hamburger-list-btn">Home</button>
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
+                    <button className="hamburger-list-btn">Home</button>
+                  </Link>
                 </li>
                 <li>
-                  <button className="hamburger-list-btn">Recipes</button>
+                  <Link
+                    to="/recipes"
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
+                    <button className="hamburger-list-btn">Recipes</button>
+                  </Link>
                 </li>
                 <li>
-                  <button className="hamburger-list-btn">About me</button>
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
+                    <button className="hamburger-list-btn">About me</button>
+                  </Link>
                 </li>
               </ul>
             </div>
