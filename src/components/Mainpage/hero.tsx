@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <div className="landing-hero-container">
-      <div className="hide-the-wave"></div>
       <div className="hero-images">
         <div className="big-picture">
           <img
