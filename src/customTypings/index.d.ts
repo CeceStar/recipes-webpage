@@ -26,6 +26,12 @@ declare module "myTypes" {
     idWord: string;
     title: string;
     options: string[] | number[];
+    handleClick: React.MouseEventHandler<HTMLButtonElement>;
+  }
+
+  interface FilteredRecipes {
+    recipesWithFilter: OneRecipe[] | null;
+    allRecipesWithoutFilter: OneRecipe[] | null;
   }
 }
 

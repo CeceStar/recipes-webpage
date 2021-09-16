@@ -1,12 +1,11 @@
 .background-frame-all-recipes {
-  height: auto;
   background-color: $white;
-  margin-bottom: 100px;
 }
 
 .filters-container {
   max-width: 300px;
-  margin: 10px;
+  min-width: 250px;
+  margin: 0 auto;
 }
 
 .box-of-filters {
