@@ -168,6 +168,16 @@ button {
   padding-left: 25px;
 }
 
+.recipe-btn {
+  float: right;
+  width: 150px;
+  margin: 10px 20px;
+}
+
+.show-filters-btn {
+  width: 100%;
+}
+
 @media only screen and (min-width: 680px) {
   .header-btn {
     outline: none;
@@ -592,5 +602,22 @@ button {
 
 .box-of-filters ul li {
   list-style-type: none;
+}
+
+.div-with-filters-boxes {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.cards-container {
+  margin: 30px 0px 100px 0px;
+}
+
+.small-card-container {
+  margin: 10px 20px 60px 20px;
+}
+
+.title-card-style {
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=styles.css.map */

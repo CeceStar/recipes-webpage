@@ -17,9 +17,11 @@ declare module "myTypes" {
     meal: string[];
     cookingTime: string;
     difficultyLevel: string;
+    dietaryRestrictions: string[];
     totalNumberOfIngredients: number;
     numberOfIngredientsTag: string;
     rating: number;
+    ratingTag: string;
   }
 
   interface RecipeFilters {

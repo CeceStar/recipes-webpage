@@ -27,9 +27,11 @@ function App() {
         meal,
         cookingTime,
         difficultyLevel,
+        dietaryRestrictions,
         totalNumberOfIngredients,
         numberOfIngredientsTag,  
         rating, 
+        ratingTag,
       }
     }
   }

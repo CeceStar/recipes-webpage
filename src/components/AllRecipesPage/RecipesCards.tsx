@@ -20,10 +20,10 @@ export default function RecipesCards(props: FilteredRecipes) {
       )}
       {renderThisArrayOfRecipes?.map((recipe) => {
         return (
-          <div key={recipe.slug}>
-            <h3>{recipe.title}</h3>
+          <div key={recipe.slug} className="small-card-container">
+            <h3 className="title-card-style">{recipe.title}</h3>
             <p>{recipe.introText}</p>
-            <button className="btn">View Recipe</button>
+            <button className="btn recipe-btn">View Recipe</button>
           </div>
         );
       })}

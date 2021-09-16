@@ -13,7 +13,7 @@ function Filters(props: RecipeFilters) {
             return (
               <li key={`${props.idWord}${idstring}`}>
                 <button
-                  id={`${props.idWord}${idstring}`}
+                  id={`${props.idWord}`}
                   className="filter-btn"
                   onClick={props.handleClick}>
                   {option}
