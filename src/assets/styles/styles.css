@@ -620,4 +620,17 @@ button {
 .title-card-style {
   margin-bottom: 10px;
 }
+
+.background-frame-error {
+  background-color: #FCFCFC;
+  height: 80vh;
+}
+
+.error-message-container {
+  margin: 20px;
+}
+
+.error-message-container button {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=styles.css.map */
