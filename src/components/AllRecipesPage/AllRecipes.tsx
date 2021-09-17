@@ -22,8 +22,6 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
       let clickedFilterType = e.currentTarget.id;
       let clickedFilter = e.currentTarget.innerHTML;
       let recipesWithChoosenFilter;
-      console.log(clickedFilter);
-      console.log(clickedFilterType);
       if (props.fetchedRecipeData !== null) {
         if (clickedFilterType === "meal") {
           recipesWithChoosenFilter = props.fetchedRecipeData.filter(

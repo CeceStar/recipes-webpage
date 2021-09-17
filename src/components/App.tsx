@@ -72,6 +72,7 @@ function App() {
           <MainPage />
         </Route>
         <Route exact path="/recipes">
+          <ScrollToTop />
           <AllRecipesPage fetchedRecipeData={recipeData} />
         </Route>
         <Route path="/recipes/:slug">
