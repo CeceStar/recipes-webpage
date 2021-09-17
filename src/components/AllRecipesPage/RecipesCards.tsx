@@ -24,7 +24,7 @@ export default function RecipesCards(props: FilteredRecipes) {
             <div key={recipe.slug} className="small-card-container">
               <h3 className="title-card-style">{recipe.title}</h3>
               <p>{recipe.introText}</p>
-              <Link key={recipe.slug} to={`/recipes/${recipe.slug}`}>
+              <Link to={`/recipes/${recipe.slug}`}>
                 <button className="btn recipe-btn">View Recipe</button>
               </Link>
             </div>

@@ -13,8 +13,6 @@ import {
 import RecipesCards from "./RecipesCards";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
-  // let [filterActive, setFilterActive] = useState(false);
-  // let [clickedFilterName, setclickedFilterName] = useState<string>("");
   let [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
   let [showFilterOptions, setShowFilterOptions] = useState(true);
 
