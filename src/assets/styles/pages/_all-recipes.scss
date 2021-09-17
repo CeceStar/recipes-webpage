@@ -1,12 +1,11 @@
 .background-frame-all-recipes {
-  height: auto;
   background-color: $white;
-  margin-bottom: 100px;
 }
 
 .filters-container {
   max-width: 300px;
-  margin: 10px;
+  min-width: 250px;
+  margin: 0 auto;
 }
 
 .box-of-filters {
@@ -22,4 +21,21 @@
       list-style-type: none;
     }
   }
+}
+
+.div-with-filters-boxes {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.cards-container {
+  margin: 30px 0px 100px 0px;
+}
+
+.small-card-container {
+  margin: 10px 20px 60px 20px;
+}
+
+.title-card-style {
+  margin-bottom: 10px;
 }

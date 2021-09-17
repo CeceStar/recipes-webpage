@@ -6,6 +6,9 @@ import Footer from "./Footer";
 import MainPage from "./MainPage/Mainpage";
 import AllRecipesPage from "./AllRecipesPage/AllRecipes";
 import { OneRecipe } from "myTypes";
+import NotFound from "./404";
+import SingleRecipe from "./SingleRecipePage/single-recipe";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const query = `
@@ -27,9 +30,11 @@ function App() {
         meal,
         cookingTime,
         difficultyLevel,
+        dietaryRestrictions,
         totalNumberOfIngredients,
         numberOfIngredientsTag,  
         rating, 
+        ratingTag,
       }
     }
   }
@@ -66,8 +71,15 @@ function App() {
         <Route exact path="/">
           <MainPage />
         </Route>
-        <Route path="/recipes">
+        <Route exact path="/recipes">
           <AllRecipesPage fetchedRecipeData={recipeData} />
+        </Route>
+        <Route path="/recipes/:slug">
+          <ScrollToTop />
+          <SingleRecipe fetchedRecipeData={recipeData} />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
       <Footer />

@@ -1,4 +1,5 @@
-import React from "react";
+import { MouseEvent } from "react";
+import { useState } from "react";
 import Filters from "./Filters";
 import { OneRecipe } from "myTypes";
 import {
@@ -9,44 +10,123 @@ import {
   numberOfIngredientsTagOptionsArray,
   ratingOptionsArray,
 } from "./FilterOptionsArray";
+import RecipesCards from "./RecipesCards";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
-  // if (props.fetchedRecipeData !== null) {
-  //   console.log(props.fetchedRecipeData[0].meal);
-  //   const recipesWithHigherRatingThanThree = props.fetchedRecipeData.filter(
-  //     (element, index) => {
-  //       return element.rating > 3;
-  //     }
-  //   );
-  //   console.log(recipesWithHigherRatingThanThree);
-  // }
+  let [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
+  let [showFilterOptions, setShowFilterOptions] = useState(true);
+
+  function handleClickEvent(e: MouseEvent<HTMLButtonElement>): void {
+    if (e.currentTarget.className === "filter-btn") {
+      e.currentTarget.className = "clicked-filter-btn";
+      let clickedFilterType = e.currentTarget.id;
+      let clickedFilter = e.currentTarget.innerHTML;
+      let recipesWithChoosenFilter;
+      console.log(clickedFilter);
+      console.log(clickedFilterType);
+      if (props.fetchedRecipeData !== null) {
+        if (clickedFilterType === "meal") {
+          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
+            (element) => {
+              return element.meal.includes(clickedFilter);
+            }
+          );
+          setFilteredArray(recipesWithChoosenFilter);
+        } else if (clickedFilterType === "time") {
+          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
+            (element) => {
+              return element.cookingTime.includes(clickedFilter);
+            }
+          );
+          setFilteredArray(recipesWithChoosenFilter);
+        } else if (clickedFilterType === "level") {
+          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
+            (element) => {
+              return element.difficultyLevel.includes(clickedFilter);
+            }
+          );
+          setFilteredArray(recipesWithChoosenFilter);
+        } else if (clickedFilterType === "dietary") {
+          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
+            (element) => {
+              return element.dietaryRestrictions.includes(clickedFilter);
+            }
+          );
+          setFilteredArray(recipesWithChoosenFilter);
+        } else if (clickedFilterType === "ingredients") {
+          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
+            (element) => {
+              return element.numberOfIngredientsTag.includes(clickedFilter);
+            }
+          );
+          setFilteredArray(recipesWithChoosenFilter);
+        } else if (clickedFilterType === "rating") {
+          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
+            (element) => {
+              return element.ratingTag.includes(clickedFilter);
+            }
+          );
+          setFilteredArray(recipesWithChoosenFilter);
+        }
+      }
+    } else {
+      e.currentTarget.className = "filter-btn";
+    }
+  }
 
   return (
     <>
       <div className="background-frame-all-recipes">
         <h2>All recipes</h2>
-        <Filters title="Meal" options={mealOptionsArray} idWord="meal" />
-        <Filters
-          title="Cooking time"
-          options={cookingTimeOptionsArray}
-          idWord="time"
+        <div className="div-with-filters-boxes">
+          <button
+            className="btn show-filters-btn"
+            onClick={() => {
+              setShowFilterOptions(!showFilterOptions);
+            }}>
+            {showFilterOptions ? "Hide filters" : "Show filters"}
+          </button>
+          <Filters
+            title="Meal"
+            options={mealOptionsArray}
+            idWord="meal"
+            handleClick={handleClickEvent}
+          />
+          <Filters
+            title="Cooking time"
+            options={cookingTimeOptionsArray}
+            idWord="time"
+            handleClick={handleClickEvent}
+          />
+          <Filters
+            title="Difficulty level"
+            options={difficultyLevelOptionsArray}
+            idWord="level"
+            handleClick={handleClickEvent}
+          />
+          <Filters
+            title="Dietary Restrictions"
+            options={dietaryRestrictionsOptionsArray}
+            idWord="dietary"
+            handleClick={handleClickEvent}
+          />
+          <Filters
+            title="No of Ingredients"
+            options={numberOfIngredientsTagOptionsArray}
+            idWord="ingredients"
+            handleClick={handleClickEvent}
+          />
+          <Filters
+            title="Rating"
+            options={ratingOptionsArray}
+            idWord="rating"
+            handleClick={handleClickEvent}
+          />
+        </div>
+        <RecipesCards
+          recipesWithFilter={filteredArray}
+          allRecipesWithoutFilter={props.fetchedRecipeData}
         />
-        <Filters
-          title="Difficulty level"
-          options={difficultyLevelOptionsArray}
-          idWord="level"
-        />
-        <Filters
-          title="Dietary Restrictions"
-          options={dietaryRestrictionsOptionsArray}
-          idWord="dietary"
-        />
-        <Filters
-          title="No of Ingredients"
-          options={numberOfIngredientsTagOptionsArray}
-          idWord="ingredients"
-        />
-        <Filters title="Rating" options={ratingOptionsArray} idWord="rating" />
       </div>
     </>
   );

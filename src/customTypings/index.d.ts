@@ -17,15 +17,23 @@ declare module "myTypes" {
     meal: string[];
     cookingTime: string;
     difficultyLevel: string;
+    dietaryRestrictions: string[];
     totalNumberOfIngredients: number;
     numberOfIngredientsTag: string;
     rating: number;
+    ratingTag: string;
   }
 
   interface RecipeFilters {
     idWord: string;
     title: string;
     options: string[] | number[];
+    handleClick: React.MouseEventHandler<HTMLButtonElement>;
+  }
+
+  interface FilteredRecipes {
+    recipesWithFilter: OneRecipe[] | null;
+    allRecipesWithoutFilter: OneRecipe[] | null;
   }
 }
 
