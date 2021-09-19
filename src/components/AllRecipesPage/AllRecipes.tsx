@@ -76,7 +76,7 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
     <>
       <div className="background-frame-all-recipes">
         <h2>All recipes</h2>
-        <div className="div-with-filters-boxes">
+        <div className="button-and-filters-div">
           <button
             className="btn show-filters-btn"
             onClick={() => {
@@ -84,42 +84,51 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
             }}>
             {showFilterOptions ? "Hide filters" : "Show filters"}
           </button>
-          <Filters
-            title="Meal"
-            options={mealOptionsArray}
-            idWord="meal"
-            handleClick={handleClickEvent}
-          />
-          <Filters
-            title="Cooking time"
-            options={cookingTimeOptionsArray}
-            idWord="time"
-            handleClick={handleClickEvent}
-          />
-          <Filters
-            title="Difficulty level"
-            options={difficultyLevelOptionsArray}
-            idWord="level"
-            handleClick={handleClickEvent}
-          />
-          <Filters
-            title="Dietary Restrictions"
-            options={dietaryRestrictionsOptionsArray}
-            idWord="dietary"
-            handleClick={handleClickEvent}
-          />
-          <Filters
-            title="No of Ingredients"
-            options={numberOfIngredientsTagOptionsArray}
-            idWord="ingredients"
-            handleClick={handleClickEvent}
-          />
-          <Filters
-            title="Rating"
-            options={ratingOptionsArray}
-            idWord="rating"
-            handleClick={handleClickEvent}
-          />
+          <div className={showFilterOptions ? "" : "hidden"}>
+            <Filters
+              title="Meal"
+              options={mealOptionsArray}
+              idWord="meal"
+              handleClick={handleClickEvent}
+            />
+            <Filters
+              title="Cooking time"
+              options={cookingTimeOptionsArray}
+              idWord="time"
+              handleClick={handleClickEvent}
+            />
+            <Filters
+              title="Difficulty level"
+              options={difficultyLevelOptionsArray}
+              idWord="level"
+              handleClick={handleClickEvent}
+            />
+            <Filters
+              title="Dietary Restrictions"
+              options={dietaryRestrictionsOptionsArray}
+              idWord="dietary"
+              handleClick={handleClickEvent}
+            />
+            <Filters
+              title="No of Ingredients"
+              options={numberOfIngredientsTagOptionsArray}
+              idWord="ingredients"
+              handleClick={handleClickEvent}
+            />
+            <Filters
+              title="Rating"
+              options={ratingOptionsArray}
+              idWord="rating"
+              handleClick={handleClickEvent}
+            />
+            <button
+              className="btn show-filters-btn"
+              onClick={() => {
+                setShowFilterOptions(!showFilterOptions);
+              }}>
+              {showFilterOptions ? "Hide filters" : "Show filters"}
+            </button>
+          </div>
         </div>
         <RecipesCards
           recipesWithFilter={filteredArray}
