@@ -3,7 +3,7 @@ import "../assets/styles/styles.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import MainPage from "./MainPage/Mainpage";
+import MainPage from "./Mainpage/Mainpage";
 import AllRecipesPage from "./AllRecipesPage/AllRecipes";
 import { OneRecipe } from "myTypes";
 import NotFound from "./404";
