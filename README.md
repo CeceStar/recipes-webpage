@@ -15,6 +15,6 @@ Here are some images of the website:
 
 ![image](https://user-images.githubusercontent.com/39659763/134507563-e649f54f-aaf4-4650-8367-bc76f0ae7052.png)
 
-## Deploy on Netlify
+## Deployed on Netlify
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d20c2fc4-ca9d-430e-842d-58ae8398e366/deploy-status)](https://app.netlify.com/sites/lets-eat-and-be-happy/deploys)
