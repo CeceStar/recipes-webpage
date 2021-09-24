@@ -623,6 +623,46 @@ button {
   margin-bottom: 10px;
 }
 
+@media only screen and (min-width: 700px) {
+  .background-frame-all-recipes {
+    margin: 0 auto;
+    max-width: 1100px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20px (1fr)[10] 20px;
+        grid-template-columns: 20px repeat(10, 1fr) 20px;
+    -ms-grid-rows: 100px auto;
+        grid-template-rows: 100px auto;
+    grid-auto-flow: column;
+    margin-bottom: 100px;
+  }
+  .background-frame-all-recipes h2 {
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+  .button-and-filters-div {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 6;
+    grid-row: 2 / span 6;
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+  .cards-container {
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-column: 4 / span 9;
+    margin: 0px;
+  }
+  .small-card-container {
+    margin: 10px 0px 60px 0px;
+  }
+  .show-filters-btn {
+    display: none;
+  }
+}
+
 .background-frame-error {
   background-color: #FCFCFC;
   height: 80vh;
@@ -714,5 +754,68 @@ button {
 
 .ingredients-and-howto-box p {
   line-height: 1.5;
+}
+
+@media only screen and (min-width: 700px) {
+  .recipe-container {
+    margin: 0 auto;
+    max-width: 1100px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20px (1fr)[10] 20px;
+        grid-template-columns: 20px repeat(10, 1fr) 20px;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .recipe-container h1 {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 6;
+    grid-column: 2 / span 6;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+  .image-container {
+    max-width: 450px;
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 5;
+    grid-column: 8 / span 5;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-row: 1 / span 3;
+  }
+  .intro-to-recipe-container {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2 / span 5;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
+  }
+  .ingredients-and-howto-box {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-column: 2 / span 10;
+    -ms-grid-row: 4;
+    grid-row: 4;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    margin-top: 50px;
+  }
+  .link-to-url {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 6;
+    grid-column: 2 / span 6;
+    -ms-grid-row: 5;
+    grid-row: 5;
+  }
+  .button-back-container {
+    -ms-grid-column: 10;
+    -ms-grid-column-span: 2;
+    grid-column: 10 / span 2;
+    -ms-grid-row: 6;
+    grid-row: 6;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

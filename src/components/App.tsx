@@ -35,6 +35,9 @@ function App() {
         numberOfIngredientsTag,  
         rating, 
         ratingTag,
+        sys{
+          publishedAt
+        }
       }
     }
   }

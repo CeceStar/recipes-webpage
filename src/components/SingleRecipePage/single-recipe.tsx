@@ -32,30 +32,36 @@ function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
               alt="Drawn hand doing thumps up on a blue background"
             />
           </div>
-          <h1>{recipe?.title}</h1>
-          <p className="intro-text">{recipe?.introText}</p>
-          <div className="small-info-icons">
-            <span className="info">
-              <i className="fas fa-star"></i> {recipe?.rating}
-            </span>
-            <span className="info">
-              <i className="fas fa-clock"></i> {recipe?.cookingTime}
-            </span>
-            <span className="info">
-              <i className="fas fa-shopping-basket"></i>{" "}
-              {recipe?.totalNumberOfIngredients} {wordDependingOnNumber()}
-            </span>
+          <div className="intro-to-recipe-container">
+            <h1>{recipe?.title}</h1>
+            <p className="intro-text">{recipe?.introText}</p>
+            <div className="small-info-icons">
+              <span className="info">
+                <i className="fas fa-star"></i> {recipe?.rating}
+              </span>
+              <span className="info">
+                <i className="fas fa-clock"></i> {recipe?.cookingTime}
+              </span>
+              <span className="info">
+                <i className="fas fa-shopping-basket"></i>{" "}
+                {recipe?.totalNumberOfIngredients} {wordDependingOnNumber()}
+              </span>
+            </div>
           </div>
           <div className="ingredients-and-howto-box">
-            <h3>Ingredients</h3>
-            <ul>
-              {recipe?.listOfIngredients.map((ingredient) => {
-                i++;
-                return <li key={`ing${i}`}>{ingredient}</li>;
-              })}
-            </ul>
-            <h3>Directions</h3>
-            <p>{recipe?.directions}</p>
+            <div className="ingredients">
+              <h3>Ingredients</h3>
+              <ul>
+                {recipe?.listOfIngredients.map((ingredient) => {
+                  i++;
+                  return <li key={`ing${i}`}>{ingredient}</li>;
+                })}
+              </ul>
+            </div>
+            <div className="directions">
+              <h3>Directions</h3>
+              <p>{recipe?.directions}</p>
+            </div>
           </div>
           <p className="link-to-url">
             Recipe and picture is collected from{" "}
