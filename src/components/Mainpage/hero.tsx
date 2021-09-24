@@ -27,7 +27,7 @@ function Hero() {
         <Link to="/recipes" className="btn-hero">
           <button className="btn">View all</button>
         </Link>
-        <img className="wavy-line-hero" src={WavyLine} />
+        <img className="wavy-line-hero" src={WavyLine} alt="" />
       </div>
     </>
   );
