@@ -676,6 +676,10 @@ button {
   margin-top: 20px;
 }
 
+.background-frame-single-recipe {
+  min-height: 100vh;
+}
+
 .recipe-container {
   position: relative;
   max-width: 400px;
