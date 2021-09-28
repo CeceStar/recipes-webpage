@@ -1,4 +1,4 @@
-import Hero from "./Hero";
+import Hero from "./hero";
 
 function MainPage() {
   return (
