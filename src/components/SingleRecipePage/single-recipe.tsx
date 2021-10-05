@@ -1,11 +1,25 @@
+import { useEffect } from "react";
 import { OneRecipe } from "myTypes";
 import { Link } from "react-router-dom";
+import showdown from "showdown";
 import LikeStamp from "../../assets/images/Like-stamp.png";
 
 function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
   let recipe = props.fetchedRecipeData?.find((recipe) => {
     return recipe.slug === window.location.pathname.substring(9);
   });
+
+  useEffect(() => {
+    if (recipe?.directions !== undefined) {
+      let htmlDirectionsString = new showdown.Converter().makeHtml(
+        recipe?.directions
+      );
+      // let htmlDirections = document.createRange().createContextualFragment(htmlDirectionsString);
+      const placeholder =
+        document.getElementsByClassName("display-directions")[0];
+      placeholder.innerHTML = htmlDirectionsString;
+    }
+  }, [recipe?.directions]);
 
   function wordDependingOnNumber(): string {
     let compare = recipe?.totalNumberOfIngredients;
@@ -16,6 +30,7 @@ function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
     }
   }
   let i = 0;
+
   return (
     <>
       <div className="background-frame-single-recipe">
@@ -60,7 +75,7 @@ function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
             </div>
             <div className="directions">
               <h3>Directions</h3>
-              <p>{recipe?.directions}</p>
+              <p className="display-directions"></p>
             </div>
           </div>
           <p className="link-to-url">

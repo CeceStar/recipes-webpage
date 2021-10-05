@@ -761,6 +761,15 @@ button {
   line-height: 1.5;
 }
 
+.display-directions h3 {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.display-directions ol {
+  padding-left: 40px;
+}
+
 @media only screen and (min-width: 700px) {
   .recipe-container {
     margin: 0 auto;
