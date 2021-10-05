@@ -11,13 +11,12 @@ function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
 
   useEffect(() => {
     if (recipe?.directions !== undefined) {
-      let htmlDirectionsString = new showdown.Converter().makeHtml(
+      let htmlDirections = new showdown.Converter().makeHtml(
         recipe?.directions
       );
-      // let htmlDirections = document.createRange().createContextualFragment(htmlDirectionsString);
-      const placeholder =
+      const paragraphForDirections =
         document.getElementsByClassName("display-directions")[0];
-      placeholder.innerHTML = htmlDirectionsString;
+        paragraphForDirections.innerHTML = htmlDirections;
     }
   }, [recipe?.directions]);
 
