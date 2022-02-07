@@ -2,7 +2,7 @@
 
 A recipes webpage created with React and using Typescript. Also used Contentful as CMS and getting all recipes through an API call.
 
-This was our individual project that we made so everything is designed and coded my me alone. This is a work in progress and right now its MVP :)
+This was our individual project that we made so everything is designed and coded by me alone. This is a work in progress and right now its MVP :)
 
 You can have a look at my Design that I did in Figma here: 
 https://www.figma.com/file/S00cU17CKm1Ca0xw9grJHb/Individual-project?node-id=0%3A1
