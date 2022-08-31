@@ -1,24 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { OneRecipe } from "myTypes";
 import { Link } from "react-router-dom";
 import showdown from "showdown";
 import LikeStamp from "../../assets/images/Like-stamp.png";
+import RandomBlobb from "../../assets/images/random-blobb.svg";
 
 function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
+  const [directions, setDirections] = useState<string>();
   let recipe = props.fetchedRecipeData?.find((recipe) => {
     return recipe.slug === window.location.pathname.substring(9);
   });
 
   useEffect(() => {
     if (recipe?.directions !== undefined) {
-      let htmlDirections = new showdown.Converter().makeHtml(
-        recipe?.directions
-      );
-      const paragraphForDirections =
-        document.getElementsByClassName("display-directions")[0];
-        paragraphForDirections.innerHTML = htmlDirections;
+      let htmlDirections = new showdown.Converter().makeHtml(recipe.directions);
+      setDirections(htmlDirections);
     }
   }, [recipe?.directions]);
+
+  function showDirectionsOnPage() {
+    return { __html: `${directions}` };
+  }
 
   function wordDependingOnNumber(): string {
     let compare = recipe?.totalNumberOfIngredients;
@@ -63,6 +65,11 @@ function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
             </div>
           </div>
           <div className="ingredients-and-howto-box">
+            <img
+              className="random-blobb-top"
+              src={RandomBlobb}
+              alt="random blobb"
+            />
             <div className="ingredients">
               <h3>Ingredients</h3>
               <ul>
@@ -74,8 +81,15 @@ function SingleRecipes(props: { fetchedRecipeData: OneRecipe[] | null }) {
             </div>
             <div className="directions">
               <h3>Directions</h3>
-              <p className="display-directions"></p>
+              <p
+                className="display-directions"
+                dangerouslySetInnerHTML={showDirectionsOnPage()}></p>
             </div>
+            <img
+              className="random-blobb-bottom"
+              src={RandomBlobb}
+              alt="random blobb"
+            />
           </div>
           <p className="link-to-url">
             Recipe and picture is collected from{" "}

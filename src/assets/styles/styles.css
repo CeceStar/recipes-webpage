@@ -735,6 +735,7 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 40px;
 }
 
 .ingredients-and-howto-box {
@@ -742,6 +743,7 @@ button {
   max-width: 100%;
   background-color: #FFFAE3;
   border-radius: 30px;
+  margin-top: 40px;
   padding: 20px;
 }
 
@@ -769,6 +771,24 @@ button {
 
 .display-directions ol {
   padding-left: 40px;
+}
+
+.random-blobb-top {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: -35px;
+  left: -35px;
+  z-index: -1;
+}
+
+.random-blobb-bottom {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: -35px;
+  right: -35px;
+  z-index: -1;
 }
 
 @media only screen and (min-width: 700px) {
@@ -831,6 +851,24 @@ button {
     grid-column: 10 / span 2;
     -ms-grid-row: 6;
     grid-row: 6;
+  }
+  .random-blobb-top {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+    z-index: -1;
+    fill: #99E1D9;
+    color: #99E1D9;
+  }
+  .random-blobb-bottom {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+    z-index: -1;
   }
 }
 /*# sourceMappingURL=styles.css.map */
