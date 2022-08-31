@@ -738,6 +738,7 @@ button {
 }
 
 .ingredients-and-howto-box {
+  position: relative;
   max-width: 100%;
   background-color: #FFFAE3;
   border-radius: 30px;
