@@ -448,6 +448,51 @@ button {
   }
 }
 
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 100px;
+  height: 100px;
+  border: 20px solid #f3f3f3;
+  /* Light grey */
+  border-top: 20px solid #99E1D9;
+  border-radius: 50%;
+  -webkit-animation: spinner 1.5s linear infinite;
+          animation: spinner 1.5s linear infinite;
+}
+
+.spinner-container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 100px;
+}
+
 .landing-hero-container {
   position: relative;
   height: 670px;
@@ -688,9 +733,28 @@ button {
   padding-bottom: 100px;
 }
 
-.recipe-container h1 {
+.intro-to-recipe-container {
+  margin: 15px 10px 10px;
+}
+
+.intro-to-recipe-container h1 {
   font-weight: 400;
-  margin: 10px 10px;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  margin-bottom: 15px;
+}
+
+.small-info-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
 }
 
 .image-container {
@@ -705,22 +769,6 @@ button {
   position: absolute;
   bottom: -10px;
   left: -20px;
-}
-
-.intro-text {
-  margin: 10px 10px;
-}
-
-.small-info-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.7rem;
-  margin: 15px 10px;
 }
 
 .link-to-url {
@@ -825,11 +873,12 @@ button {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
+    margin: 0px;
   }
   .ingredients-and-howto-box {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
-    grid-column: 2 / span 10;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / span 12;
     -ms-grid-row: 4;
     grid-row: 4;
     display: -ms-grid;
