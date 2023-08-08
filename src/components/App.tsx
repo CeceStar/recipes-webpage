@@ -19,7 +19,7 @@ function App() {
       const allreq = await requestAllRecepies();
       setRecipeData(allreq);
     })();
-  }, [setRecipeData]);
+  }, []);
 
   return (
     <Router>
