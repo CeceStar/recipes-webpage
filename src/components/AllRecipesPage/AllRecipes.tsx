@@ -65,6 +65,8 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
             }
           );
           setFilteredArray(recipesWithChoosenFilter);
+        } else if (clickedFilterType === "all") {
+          setFilteredArray(props.fetchedRecipeData);
         }
       }
     } else {
@@ -86,7 +88,7 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
           </button>
           <div className={showFilterOptions ? "" : "hidden"}>
             <Filters
-              title="Meal"
+              title="Occation"
               options={mealOptionsArray}
               idWord="meal"
               handleClick={handleClickEvent}
@@ -119,6 +121,12 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
               title="Rating"
               options={ratingOptionsArray}
               idWord="rating"
+              handleClick={handleClickEvent}
+            />
+            <Filters
+              title=""
+              options={["Show all"]}
+              idWord="all"
               handleClick={handleClickEvent}
             />
             <button
