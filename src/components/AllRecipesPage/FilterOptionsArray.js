@@ -2,13 +2,13 @@ export let mealOptionsArray = [
   "Dinner",
   "Lunch",
   "Snack",
-  "Brunch",
-  "Breakfast",
+  //"Brunch",
+  //"Breakfast",
   "Fika",
-  "Pre-course",
-  "Main course",
-  "Dessert",
-  "Buffet",
+  //"Pre-course",
+  //"Main course",
+  //"Dessert",
+  // "Buffet",
 ];
 
 export let cookingTimeOptionsArray = [
