@@ -14,7 +14,7 @@ import RecipesCards from "./RecipesCards";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
   let [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
-  let [showFilterOptions, setShowFilterOptions] = useState(true);
+  let [showFilterOptions, setShowFilterOptions] = useState(false);
 
   function handleClickEvent(e: MouseEvent<HTMLButtonElement>): void {
     if (e.currentTarget.className === "filter-btn") {
@@ -81,7 +81,8 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
             className="btn show-filters-btn"
             onClick={() => {
               setShowFilterOptions(!showFilterOptions);
-            }}>
+            }}
+          >
             {showFilterOptions ? "Hide filters" : "Show filters"}
           </button>
           <div className={showFilterOptions ? "" : "hidden"}>
@@ -125,7 +126,8 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
               className="btn show-filters-btn"
               onClick={() => {
                 setShowFilterOptions(!showFilterOptions);
-              }}>
+              }}
+            >
               {showFilterOptions ? "Hide filters" : "Show filters"}
             </button>
           </div>
