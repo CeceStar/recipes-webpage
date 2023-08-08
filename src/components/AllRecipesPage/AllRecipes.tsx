@@ -14,7 +14,7 @@ import RecipesCards from "./RecipesCards";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
   let [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
-  let [showFilterOptions, setShowFilterOptions] = useState(false);
+  let [showFilterOptions, setShowFilterOptions] = useState(true);
 
   function handleClickEvent(e: MouseEvent<HTMLButtonElement>): void {
     if (e.currentTarget.className === "filter-btn") {
