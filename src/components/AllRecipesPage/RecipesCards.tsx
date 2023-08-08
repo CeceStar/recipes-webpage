@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function RecipesCards(props: FilteredRecipes) {
   let renderThisArrayOfRecipes;
-  if (props.recipesWithFilter?.length === 0) {
+  if (
+    props.recipesWithFilter === null ||
+    props.recipesWithFilter?.length === 0
+  ) {
     renderThisArrayOfRecipes = props.allRecipesWithoutFilter;
   } else {
     renderThisArrayOfRecipes = props.recipesWithFilter;
