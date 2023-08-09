@@ -2,6 +2,7 @@
   position: relative;
   height: 670px;
   background-color: $bright-yellow;
+  margin-bottom: 20px;
 }
 
 // .big-picture {
@@ -45,6 +46,26 @@
 
 .wavy-line-hero {
   width: 100%;
+}
+
+/////////////////////////////////////
+///Lunch generator
+/////////////////////////////////////
+
+.generator-container {
+  margin: 20px;
+}
+
+.btn-and-suggestion-container {
+  text-align: center;
+  min-height: 200px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.generate-btn {
+  justify-self: center;
+  width: 100px;
 }
 
 @media only screen and (min-width: 640px) {
