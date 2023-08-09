@@ -33,7 +33,7 @@
 }
 
 .small-card-container {
-  margin: 20px;
+  padding-bottom: 20px;
   display: grid;
 }
 
@@ -67,9 +67,6 @@
     grid-row: 2;
     grid-column: 4 / span 9;
     margin: 0px;
-  }
-  .small-card-container {
-    margin: 10px 0px 60px 0px;
   }
 
   .show-filters-btn {

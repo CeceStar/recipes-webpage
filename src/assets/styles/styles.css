@@ -435,14 +435,16 @@ button {
 
 .generator-container {
   margin: 20px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.intro-text-generator {
+  padding-bottom: 20px;
 }
 
 .btn-and-suggestion-container {
-  text-align: center;
-  min-height: 200px;
   display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 .generate-btn {
@@ -513,6 +515,9 @@ button {
     bottom: 50px;
     left: 50px;
   }
+  .generator-container {
+    max-width: 700px;
+  }
 }
 .background-frame-all-recipes {
   background-color: #FCFCFC;
@@ -548,7 +553,7 @@ button {
 }
 
 .small-card-container {
-  margin: 20px;
+  padding-bottom: 20px;
   display: grid;
 }
 
@@ -581,9 +586,6 @@ button {
     grid-row: 2;
     grid-column: 4/span 9;
     margin: 0px;
-  }
-  .small-card-container {
-    margin: 10px 0px 60px 0px;
   }
   .show-filters-btn {
     display: none;

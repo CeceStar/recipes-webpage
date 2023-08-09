@@ -9,32 +9,35 @@ export default function Lunchgenerator(props: {
     null
   );
 
-  const options = props.fetchedRecipeData.filter((recipe) => {
+  const foodSuitableForLunch = props.fetchedRecipeData.filter((recipe) => {
     return recipe.meal.includes("Lunch");
   });
 
   function generateSuggestion() {
+    let options: OneRecipe[] = foodSuitableForLunch;
+
     if (recipeToSuggest !== null) {
       const otherOptions = options.filter((recipe) => {
         return recipe !== recipeToSuggest;
       });
-      console.log(otherOptions);
-      const noOfOpptionsAvailable = otherOptions.length;
-      const randomNumber = Math.floor(Math.random() * noOfOpptionsAvailable);
-      setRecipeToSuggest(otherOptions[randomNumber]);
-    } else {
-      const noOfOpptionsAvailable = options.length;
-      const randomNumber = Math.floor(Math.random() * noOfOpptionsAvailable);
-      setRecipeToSuggest(options[randomNumber]);
+      options = otherOptions;
     }
+    const randomNumber = Math.floor(Math.random() * options.length);
+    setRecipeToSuggest(options[randomNumber]);
   }
 
   return (
     <div className="generator-container">
-      <h2>Lunchgenerator</h2>
-      <p>What to eat today? Hit the button and get a suggestion!</p>
+      <div className="intro-text-generator">
+        <h2>Lunchgenerator</h2>
+        <p>What to eat today? Hit the button and get a suggestion!</p>
+      </div>
       <div className="btn-and-suggestion-container">
-        {recipeToSuggest && <RecipesCards recipesToShow={[recipeToSuggest]} />}
+        {recipeToSuggest ? (
+          <RecipesCards recipesToShow={[recipeToSuggest]} />
+        ) : (
+          <div></div>
+        )}
         <button className="btn generate-btn" onClick={generateSuggestion}>
           Generate
         </button>
