@@ -1,5 +1,5 @@
 import { OneRecipe } from "myTypes";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RecipesCards from "../AllRecipesPage/RecipesCards";
 
 export default function Lunchgenerator(props: {
