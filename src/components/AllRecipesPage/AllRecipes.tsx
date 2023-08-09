@@ -13,8 +13,9 @@ import {
 import RecipesCards from "./RecipesCards";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
-  let [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
-  let [showFilterOptions, setShowFilterOptions] = useState(true);
+  const [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
+  const [recipesToShow, setRecipesToShow] = useState<OneRecipe[] | null>([]);
+  const [showFilterOptions, setShowFilterOptions] = useState(true);
 
   function handleClickEvent(e: MouseEvent<HTMLButtonElement>): void {
     if (e.currentTarget.className === "filter-btn") {
@@ -68,6 +69,12 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
         } else if (clickedFilterType === "all") {
           setFilteredArray(props.fetchedRecipeData);
         }
+      }
+
+      if (filteredArray === null || filteredArray?.length === 0) {
+        setRecipesToShow(props.fetchedRecipeData);
+      } else {
+        setRecipesToShow(filteredArray);
       }
     } else {
       e.currentTarget.className = "filter-btn";
@@ -140,10 +147,15 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
             </button>
           </div>
         </div>
-        <RecipesCards
-          recipesWithFilter={filteredArray}
-          allRecipesWithoutFilter={props.fetchedRecipeData}
-        />
+        <div className="cards-container">
+          {filteredArray?.length === 0 && (
+            <h2>
+              Sorry, no recipes found with this filter, have a look at our
+              others!
+            </h2>
+          )}
+          {recipesToShow && <RecipesCards recipesToShow={recipesToShow} />}
+        </div>
       </div>
     </>
   );

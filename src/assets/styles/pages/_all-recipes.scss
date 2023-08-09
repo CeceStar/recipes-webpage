@@ -33,7 +33,12 @@
 }
 
 .small-card-container {
-  margin: 10px 20px 60px 20px;
+  margin: 20px;
+  display: grid;
+}
+
+.view-recipe-btn-container {
+  justify-self: end;
 }
 
 .title-card-style {
