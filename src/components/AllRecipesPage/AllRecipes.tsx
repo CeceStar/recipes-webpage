@@ -11,6 +11,7 @@ import {
   ratingOptionsArray,
 } from "./FilterOptionsArray";
 import RecipesCards from "./RecipesCards";
+import shuffleArray from "../../shuffleArray";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
   const [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
@@ -21,7 +22,9 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
 
   useEffect(() => {
     if (filteredArray === null || filteredArray?.length === 0) {
-      setRecipesToShow(props.fetchedRecipeData);
+      if (props.fetchedRecipeData !== null) {
+        setRecipesToShow(shuffleArray(props.fetchedRecipeData));
+      }
     } else {
       setRecipesToShow(filteredArray);
     }
@@ -30,17 +33,19 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
   function filterAndSet(clickedFilterType: string, clickedFilter: string) {
     if (props.fetchedRecipeData !== null) {
       if (clickedFilterType === "all") {
-        setFilteredArray(props.fetchedRecipeData);
+        setFilteredArray(shuffleArray(props.fetchedRecipeData));
       } else {
         setFilteredArray(
-          props.fetchedRecipeData.filter((element: any) => {
-            if (Array.isArray(element[clickedFilterType])) {
-              return element[clickedFilterType].includes(clickedFilter);
-            } else {
-              console.log(element[clickedFilterType]);
-              return element[clickedFilterType] === clickedFilter;
-            }
-          })
+          shuffleArray(
+            props.fetchedRecipeData.filter((element: any) => {
+              if (Array.isArray(element[clickedFilterType])) {
+                return element[clickedFilterType].includes(clickedFilter);
+              } else {
+                console.log(element[clickedFilterType]);
+                return element[clickedFilterType] === clickedFilter;
+              }
+            })
+          )
         );
       }
     }
