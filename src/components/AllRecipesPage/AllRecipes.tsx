@@ -41,7 +41,6 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
               if (Array.isArray(element[clickedFilterType])) {
                 return element[clickedFilterType].includes(clickedFilter);
               } else {
-                console.log(element[clickedFilterType]);
                 return element[clickedFilterType] === clickedFilter;
               }
             })
