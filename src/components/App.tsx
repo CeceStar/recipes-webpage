@@ -16,8 +16,8 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const allreq = await requestAllRecepies();
-      setRecipeData(allreq);
+      const reqAll = await requestAllRecepies();
+      setRecipeData(reqAll);
     })();
   }, []);
 
@@ -26,7 +26,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <MainPage />
+          <MainPage fetchedRecipeData={recipeData} />
         </Route>
         <Route exact path="/recipes">
           <ScrollToTop />

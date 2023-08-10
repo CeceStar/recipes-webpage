@@ -2,6 +2,7 @@
   position: relative;
   height: 670px;
   background-color: $bright-yellow;
+  margin-bottom: 20px;
 }
 
 // .big-picture {
@@ -46,6 +47,33 @@
 .wavy-line-hero {
   width: 100%;
 }
+
+/////////////////////////////////////
+///Lunch generator
+/////////////////////////////////////
+
+.generator-container {
+  margin: 20px;
+  margin: 0 auto;
+  ////Temporary whilst under construction I will add som bottom space
+  padding-bottom: 150px;
+}
+
+.intro-text-generator {
+  padding-bottom: 20px;
+}
+
+.btn-and-suggestion-container {
+  display: grid;
+}
+.generate-btn {
+  justify-self: center;
+  width: 100px;
+}
+
+///////////////////////////////////
+/// Desktop views /////////////////
+///////////////////////////////////
 
 @media only screen and (min-width: 640px) {
   .landing-hero-container {
@@ -117,5 +145,9 @@
     height: 100px;
     bottom: 50px;
     left: 50px;
+  }
+
+  .generator-container {
+    max-width: 700px;
   }
 }
