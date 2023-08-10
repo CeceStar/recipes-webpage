@@ -27,53 +27,32 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
     }
   }, [filteredArray, props.fetchedRecipeData]);
 
+  function filterAndSet(clickedFilterType: string, clickedFilter: string) {
+    if (props.fetchedRecipeData !== null) {
+      if (clickedFilterType === "all") {
+        setFilteredArray(props.fetchedRecipeData);
+      } else {
+        setFilteredArray(
+          props.fetchedRecipeData.filter((element: any) => {
+            if (Array.isArray(element[clickedFilterType])) {
+              return element[clickedFilterType].includes(clickedFilter);
+            } else {
+              console.log(element[clickedFilterType]);
+              return element[clickedFilterType] === clickedFilter;
+            }
+          })
+        );
+      }
+    }
+  }
+
   function handleClickEvent(e: MouseEvent<HTMLButtonElement>): void {
     if (e.currentTarget.className === "filter-btn") {
       e.currentTarget.className = "clicked-filter-btn";
       const clickedFilterType = e.currentTarget.id;
       const clickedFilter = e.currentTarget.innerHTML;
 
-      if (props.fetchedRecipeData !== null) {
-        if (clickedFilterType === "meal") {
-          setFilteredArray(
-            props.fetchedRecipeData.filter((element) => {
-              return element.meal.includes(clickedFilter);
-            })
-          );
-        } else if (clickedFilterType === "cookingTime") {
-          setFilteredArray(
-            props.fetchedRecipeData.filter((element) => {
-              return element.cookingTime === clickedFilter;
-            })
-          );
-        } else if (clickedFilterType === "difficultyLevel") {
-          setFilteredArray(
-            props.fetchedRecipeData.filter((element) => {
-              return element.difficultyLevel === clickedFilter;
-            })
-          );
-        } else if (clickedFilterType === "dietaryRestrictions") {
-          setFilteredArray(
-            props.fetchedRecipeData.filter((element) => {
-              return element.dietaryRestrictions.includes(clickedFilter);
-            })
-          );
-        } else if (clickedFilterType === "numberOfIngredientsTag") {
-          setFilteredArray(
-            props.fetchedRecipeData.filter((element) => {
-              return element.numberOfIngredientsTag === clickedFilter;
-            })
-          );
-        } else if (clickedFilterType === "ratingTag") {
-          setFilteredArray(
-            props.fetchedRecipeData.filter((element) => {
-              return element.ratingTag === clickedFilter;
-            })
-          );
-        } else if (clickedFilterType === "all") {
-          setFilteredArray(props.fetchedRecipeData);
-        }
-      }
+      filterAndSet(clickedFilterType, clickedFilter);
     } else {
       e.currentTarget.className = "filter-btn";
     }
