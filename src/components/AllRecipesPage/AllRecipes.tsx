@@ -11,6 +11,7 @@ import {
   ratingOptionsArray,
 } from "./FilterOptionsArray";
 import RecipesCards from "./RecipesCards";
+import shuffleArray from "../../shuffleArray";
 
 const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
   const [filteredArray, setFilteredArray] = useState<OneRecipe[] | null>(null);
@@ -21,65 +22,41 @@ const AllRecipes = (props: { fetchedRecipeData: OneRecipe[] | null }) => {
 
   useEffect(() => {
     if (filteredArray === null || filteredArray?.length === 0) {
-      setRecipesToShow(props.fetchedRecipeData);
+      if (props.fetchedRecipeData !== null) {
+        setRecipesToShow(shuffleArray(props.fetchedRecipeData));
+      }
     } else {
       setRecipesToShow(filteredArray);
     }
   }, [filteredArray, props.fetchedRecipeData]);
 
+  function filterAndSet(clickedFilterType: string, clickedFilter: string) {
+    if (props.fetchedRecipeData !== null) {
+      if (clickedFilterType === "all") {
+        setFilteredArray(shuffleArray(props.fetchedRecipeData));
+      } else {
+        setFilteredArray(
+          shuffleArray(
+            props.fetchedRecipeData.filter((element: any) => {
+              if (Array.isArray(element[clickedFilterType])) {
+                return element[clickedFilterType].includes(clickedFilter);
+              } else {
+                return element[clickedFilterType] === clickedFilter;
+              }
+            })
+          )
+        );
+      }
+    }
+  }
+
   function handleClickEvent(e: MouseEvent<HTMLButtonElement>): void {
     if (e.currentTarget.className === "filter-btn") {
       e.currentTarget.className = "clicked-filter-btn";
-      let clickedFilterType = e.currentTarget.id;
-      let clickedFilter = e.currentTarget.innerHTML;
-      let recipesWithChoosenFilter;
-      if (props.fetchedRecipeData !== null) {
-        if (clickedFilterType === "meal") {
-          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
-            (element) => {
-              return element.meal.includes(clickedFilter);
-            }
-          );
-          setFilteredArray(recipesWithChoosenFilter);
-        } else if (clickedFilterType === "cookingTime") {
-          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
-            (element) => {
-              return element.cookingTime === clickedFilter;
-            }
-          );
-          setFilteredArray(recipesWithChoosenFilter);
-        } else if (clickedFilterType === "difficultyLevel") {
-          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
-            (element) => {
-              return element.difficultyLevel === clickedFilter;
-            }
-          );
-          setFilteredArray(recipesWithChoosenFilter);
-        } else if (clickedFilterType === "dietaryRestrictions") {
-          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
-            (element) => {
-              return element.dietaryRestrictions.includes(clickedFilter);
-            }
-          );
-          setFilteredArray(recipesWithChoosenFilter);
-        } else if (clickedFilterType === "numberOfIngredientsTag") {
-          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
-            (element) => {
-              return element.numberOfIngredientsTag === clickedFilter;
-            }
-          );
-          setFilteredArray(recipesWithChoosenFilter);
-        } else if (clickedFilterType === "ratingTag") {
-          recipesWithChoosenFilter = props.fetchedRecipeData.filter(
-            (element) => {
-              return element.ratingTag === clickedFilter;
-            }
-          );
-          setFilteredArray(recipesWithChoosenFilter);
-        } else if (clickedFilterType === "all") {
-          setFilteredArray(props.fetchedRecipeData);
-        }
-      }
+      const clickedFilterType = e.currentTarget.id;
+      const clickedFilter = e.currentTarget.innerHTML;
+
+      filterAndSet(clickedFilterType, clickedFilter);
     } else {
       e.currentTarget.className = "filter-btn";
     }
