@@ -28,19 +28,21 @@ export default function Lunchgenerator(props: {
 
   return (
     <div className="generator-container">
-      <div className="intro-text-generator">
-        <h2>Lunchgenerator</h2>
-        <p>What to eat today? Hit the button and get a suggestion!</p>
+      <div className="text-and-btn-container">
+        <div className="intro-text-generator">
+          <h2>Lunchgenerator</h2>
+          <p>What to eat today? Hit the button and get a suggestion!</p>
+        </div>
+        <button className="btn generate-btn" onClick={generateSuggestion}>
+          Generate
+        </button>
       </div>
-      <div className="btn-and-suggestion-container">
+      <div className="suggestion-container">
         {recipeToSuggest ? (
           <RecipesCards recipesToShow={[recipeToSuggest]} />
         ) : (
           <div></div>
         )}
-        <button className="btn generate-btn" onClick={generateSuggestion}>
-          Generate
-        </button>
       </div>
     </div>
   );
