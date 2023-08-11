@@ -106,6 +106,20 @@ button {
   border-radius: 30px;
 }
 
+.btn-secondary {
+  outline: none;
+  text-decoration: none;
+  border: 2px solid #45B864;
+  background-color: white;
+  padding: 10px;
+  border-radius: 30px;
+  color: #45B864;
+}
+.btn-secondary:hover {
+  background-color: #45B864;
+  color: #000000;
+}
+
 .clicked-filter-btn {
   outline: none;
   text-decoration: none;
